@@ -29,8 +29,8 @@
 #include "tfile.h"
 #include "audioproperties.h"
 #include "taglib_export.h"
-#include "modfilebase.h"
-#include "modtag.h"
+#include "taglib/mod/modfilebase.h"
+#include "taglib/mod/modtag.h"
 #include "xmproperties.h"
 
 namespace TagLib {

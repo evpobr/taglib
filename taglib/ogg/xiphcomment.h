@@ -32,7 +32,7 @@
 #include "tstring.h"
 #include "tstringlist.h"
 #include "tbytevector.h"
-#include "flacpicture.h"
+#include "taglib/flac/flacpicture.h"
 #include "taglib_export.h"
 
 namespace TagLib {

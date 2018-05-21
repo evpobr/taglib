@@ -29,9 +29,9 @@
 
 #include "id3v1tag.h"
 #include "id3v2tag.h"
-#include "apetag.h"
-#include "xiphcomment.h"
-#include "infotag.h"
+#include "taglib/ape/apetag.h"
+#include "taglib/ogg/xiphcomment.h"
+#include "taglib/riff/wav/infotag.h"
 
 using namespace TagLib;
 

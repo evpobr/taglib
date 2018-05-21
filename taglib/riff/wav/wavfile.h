@@ -26,7 +26,7 @@
 #ifndef TAGLIB_WAVFILE_H
 #define TAGLIB_WAVFILE_H
 
-#include "rifffile.h"
+#include "taglib/riff/rifffile.h"
 #include "id3v2tag.h"
 #include "infotag.h"
 #include "wavproperties.h"

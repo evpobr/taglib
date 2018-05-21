@@ -33,8 +33,8 @@
 #include "mpcfile.h"
 #include "id3v1tag.h"
 #include "id3v2header.h"
-#include "apetag.h"
-#include "apefooter.h"
+#include "taglib/ape/apetag.h"
+#include "taglib/ape/apefooter.h"
 
 using namespace TagLib;
 

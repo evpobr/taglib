@@ -26,8 +26,8 @@
 #include <tbytevector.h>
 #include <tdebug.h>
 
-#include <flacpicture.h>
-#include <xiphcomment.h>
+#include "taglib/flac/flacpicture.h"
+#include "taglib/ogg/xiphcomment.h"
 #include <tpropertymap.h>
 
 using namespace TagLib;
