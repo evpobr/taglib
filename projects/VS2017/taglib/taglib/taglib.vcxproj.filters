@@ -480,6 +480,24 @@
     <ClInclude Include="..\..\..\..\taglib\xm\xmproperties.h">
       <Filter>Header Files\xm</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\audioproperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\fileref.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\tag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\taglib_export.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\tagunion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\tagutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -775,6 +793,21 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\taglib\xm\xmproperties.cpp">
       <Filter>Source Files\xm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\audioproperties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\fileref.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\tag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\tagunion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\tagutils.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
