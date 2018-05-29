@@ -1,0 +1,788 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\toolkit">
+      <UniqueIdentifier>{b6e963b5-cb10-45b1-a5fd-44557239ce81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\asf">
+      <UniqueIdentifier>{9a636b95-4e50-4c13-ae88-e833613a0ba8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\asf">
+      <UniqueIdentifier>{9ab4b173-c8f8-49b2-815c-d1871e62bdb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ape">
+      <UniqueIdentifier>{efbe558b-ad0a-4216-bf19-cc031da2fad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ape">
+      <UniqueIdentifier>{d8c9fef9-dcd5-48ff-87f9-37b0e38b83f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flac">
+      <UniqueIdentifier>{6164e40e-92ba-4210-88ae-86f68ab83628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\toolkit">
+      <UniqueIdentifier>{bd2f0e4b-b5c9-4c32-9604-044f2f80f202}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flac">
+      <UniqueIdentifier>{5ada50ff-b7a1-4673-8624-064b9ec8a1c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\it">
+      <UniqueIdentifier>{b63fdbf4-c5aa-4d4c-a8a6-934d0e6cbc7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\it">
+      <UniqueIdentifier>{929285f2-91d0-4b2e-9810-0c605fac64d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mod">
+      <UniqueIdentifier>{c5cf4877-09b5-42b5-9402-358fee592d00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mod">
+      <UniqueIdentifier>{9e5b7d51-8559-4c32-aaaa-140aed29fbfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mp4">
+      <UniqueIdentifier>{7937cabd-6be4-4149-bdb2-8ce8645d8a88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mp4">
+      <UniqueIdentifier>{9b20220b-581f-4185-bc04-5783fd81112f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mpc">
+      <UniqueIdentifier>{779cc751-4990-4d89-934d-ad5871b5e330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mpc">
+      <UniqueIdentifier>{08b91d87-5068-4efc-82e3-e44bbe9d5dca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mpeg">
+      <UniqueIdentifier>{e4739b08-720d-4b54-a815-1691387b4603}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mpeg">
+      <UniqueIdentifier>{2641f551-96f5-40c8-8578-494cc49954e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mpeg\id3v1">
+      <UniqueIdentifier>{942c6b23-7191-43a7-810a-49311a208e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mpeg\id3v1">
+      <UniqueIdentifier>{c6fc3183-cf39-45e0-a373-253a631af2ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mpeg\id3v2">
+      <UniqueIdentifier>{8a40a664-60b4-400c-8a61-3a9de242ef73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mpeg\id3v2">
+      <UniqueIdentifier>{aaa33f75-4f13-4ac5-93ce-7b57ab4ba3cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mpeg\id3v2\frames">
+      <UniqueIdentifier>{a7a01e46-8175-4c99-9d08-09489253eb13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mpeg\id3v2\frames">
+      <UniqueIdentifier>{b20e78fd-3905-4898-9ba7-f6c4cc071952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ogg">
+      <UniqueIdentifier>{53d05127-63a9-459e-a6dc-fb99f943763f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ogg">
+      <UniqueIdentifier>{f370d2cb-4c44-42f1-a535-1793c8efa4af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ogg\flac">
+      <UniqueIdentifier>{feb96d7c-3394-4cd3-8ddc-128d3fe9af18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ogg\flac">
+      <UniqueIdentifier>{025009e9-d831-4eb5-9ee1-c9554d963394}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ogg\opus">
+      <UniqueIdentifier>{bb550da0-fcf9-4fed-a6f4-fbb933b74c16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ogg\opus">
+      <UniqueIdentifier>{a6b9bb3a-aedd-4caf-b27a-b063bd82fa8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ogg\speex">
+      <UniqueIdentifier>{f45f7fc9-7556-431a-9105-e03de05056e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ogg\speex">
+      <UniqueIdentifier>{8894c210-acab-4b40-9905-ca3cb5d3c2af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ogg\vorbis">
+      <UniqueIdentifier>{a5e742f8-a336-475d-92a2-a0965253de72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ogg\vorbis">
+      <UniqueIdentifier>{6a64f1a3-475f-4b89-adb4-037f33add611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\riff">
+      <UniqueIdentifier>{69aad172-0de6-47fc-b1eb-2fdabdf54442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\riff">
+      <UniqueIdentifier>{9b0a0d76-d8e6-4977-83ff-b191476061be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\riff\aiff">
+      <UniqueIdentifier>{43e6e16c-c4a6-4e02-bf14-2ce69090d556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\riff\aiff">
+      <UniqueIdentifier>{4a2c340c-6ff1-437c-a37b-9c37422ed783}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\riff\wav">
+      <UniqueIdentifier>{c2e3f180-d33c-43b7-a675-1133fe3f0686}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\riff\wav">
+      <UniqueIdentifier>{a2cba86a-4039-4f33-a426-d8af8b13996f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\s3m">
+      <UniqueIdentifier>{06c788e9-c6fc-432d-ad25-7f3d474ec4d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\s3m">
+      <UniqueIdentifier>{ad7047c6-4b48-446f-b800-2e3b416c5f63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\trueaudio">
+      <UniqueIdentifier>{2ad3fa06-231d-42c5-a3b1-c15ba32e5e50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\trueaudio">
+      <UniqueIdentifier>{a5b16d98-eb0a-42bd-abe3-8e418293676e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\wavpack">
+      <UniqueIdentifier>{c70110af-be12-4879-8fa7-121b0cc6d848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\wavpack">
+      <UniqueIdentifier>{2493a422-1c1f-47c3-99bb-ded0da035f54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\xm">
+      <UniqueIdentifier>{f6e000a1-d31e-4028-b1d1-1c86d48e5380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\xm">
+      <UniqueIdentifier>{38c5b226-f06e-45ea-a8ee-fb5977ea5b24}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\taglib.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tbytevector.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tbytevectorlist.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tbytevectorstream.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tdebug.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tdebuglistener.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tfile.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tfilestream.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tiostream.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tlist.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tmap.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tpropertymap.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\trefcounter.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tstring.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tstringlist.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tutils.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\toolkit\tzlib.h">
+      <Filter>Header Files\toolkit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\asf\asfattribute.h">
+      <Filter>Header Files\asf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\asf\asffile.h">
+      <Filter>Header Files\asf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\asf\asfpicture.h">
+      <Filter>Header Files\asf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\asf\asfproperties.h">
+      <Filter>Header Files\asf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\asf\asftag.h">
+      <Filter>Header Files\asf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\asf\asfutils.h">
+      <Filter>Header Files\asf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ape\apefile.h">
+      <Filter>Header Files\ape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ape\apefooter.h">
+      <Filter>Header Files\ape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ape\apeitem.h">
+      <Filter>Header Files\ape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ape\apeproperties.h">
+      <Filter>Header Files\ape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ape\apetag.h">
+      <Filter>Header Files\ape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\flac\flacfile.h">
+      <Filter>Header Files\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\flac\flacmetadatablock.h">
+      <Filter>Header Files\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\flac\flacpicture.h">
+      <Filter>Header Files\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\flac\flacproperties.h">
+      <Filter>Header Files\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\flac\flacunknownmetadatablock.h">
+      <Filter>Header Files\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\it\itfile.h">
+      <Filter>Header Files\it</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\it\itproperties.h">
+      <Filter>Header Files\it</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mod\modfile.h">
+      <Filter>Header Files\mod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mod\modfilebase.h">
+      <Filter>Header Files\mod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mod\modfileprivate.h">
+      <Filter>Header Files\mod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mod\modproperties.h">
+      <Filter>Header Files\mod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mod\modtag.h">
+      <Filter>Header Files\mod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mp4\mp4atom.h">
+      <Filter>Header Files\mp4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mp4\mp4coverart.h">
+      <Filter>Header Files\mp4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mp4\mp4file.h">
+      <Filter>Header Files\mp4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mp4\mp4item.h">
+      <Filter>Header Files\mp4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mp4\mp4properties.h">
+      <Filter>Header Files\mp4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mp4\mp4tag.h">
+      <Filter>Header Files\mp4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpc\mpcfile.h">
+      <Filter>Header Files\mpc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpc\mpcproperties.h">
+      <Filter>Header Files\mpc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\mpegfile.h">
+      <Filter>Header Files\mpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\mpegheader.h">
+      <Filter>Header Files\mpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\mpegproperties.h">
+      <Filter>Header Files\mpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\mpegutils.h">
+      <Filter>Header Files\mpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\xingheader.h">
+      <Filter>Header Files\mpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v1\id3v1genres.h">
+      <Filter>Header Files\mpeg\id3v1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v1\id3v1tag.h">
+      <Filter>Header Files\mpeg\id3v1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\id3v2extendedheader.h">
+      <Filter>Header Files\mpeg\id3v2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\id3v2footer.h">
+      <Filter>Header Files\mpeg\id3v2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\id3v2frame.h">
+      <Filter>Header Files\mpeg\id3v2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\id3v2framefactory.h">
+      <Filter>Header Files\mpeg\id3v2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\id3v2header.h">
+      <Filter>Header Files\mpeg\id3v2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\id3v2synchdata.h">
+      <Filter>Header Files\mpeg\id3v2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\id3v2tag.h">
+      <Filter>Header Files\mpeg\id3v2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\attachedpictureframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\chapterframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\commentsframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\eventtimingcodesframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\generalencapsulatedobjectframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\ownershipframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\podcastframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\popularimeterframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\privateframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\relativevolumeframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\synchronizedlyricsframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\tableofcontentsframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\textidentificationframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\uniquefileidentifierframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\unknownframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\unsynchronizedlyricsframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\mpeg\id3v2\frames\urllinkframe.h">
+      <Filter>Header Files\mpeg\id3v2\frames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\oggfile.h">
+      <Filter>Header Files\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\oggpage.h">
+      <Filter>Header Files\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\oggpageheader.h">
+      <Filter>Header Files\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\xiphcomment.h">
+      <Filter>Header Files\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\flac\oggflacfile.h">
+      <Filter>Header Files\ogg\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\opus\opusfile.h">
+      <Filter>Header Files\ogg\opus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\opus\opusproperties.h">
+      <Filter>Header Files\ogg\opus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\speex\speexfile.h">
+      <Filter>Header Files\ogg\speex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\speex\speexproperties.h">
+      <Filter>Header Files\ogg\speex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\vorbis\vorbisfile.h">
+      <Filter>Header Files\ogg\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\ogg\vorbis\vorbisproperties.h">
+      <Filter>Header Files\ogg\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\riff\rifffile.h">
+      <Filter>Header Files\riff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\riff\riffutils.h">
+      <Filter>Header Files\riff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\riff\aiff\aifffile.h">
+      <Filter>Header Files\riff\aiff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\riff\aiff\aiffproperties.h">
+      <Filter>Header Files\riff\aiff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\riff\wav\infotag.h">
+      <Filter>Header Files\riff\wav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\riff\wav\wavfile.h">
+      <Filter>Header Files\riff\wav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\riff\wav\wavproperties.h">
+      <Filter>Header Files\riff\wav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\s3m\s3mfile.h">
+      <Filter>Header Files\s3m</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\s3m\s3mproperties.h">
+      <Filter>Header Files\s3m</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\trueaudio\trueaudiofile.h">
+      <Filter>Header Files\trueaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\trueaudio\trueaudioproperties.h">
+      <Filter>Header Files\trueaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\wavpack\wavpackfile.h">
+      <Filter>Header Files\wavpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\wavpack\wavpackproperties.h">
+      <Filter>Header Files\wavpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\xm\xmfile.h">
+      <Filter>Header Files\xm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\taglib\xm\xmproperties.h">
+      <Filter>Header Files\xm</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\asf\asfattribute.cpp">
+      <Filter>Source Files\asf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\asf\asffile.cpp">
+      <Filter>Source Files\asf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\asf\asfpicture.cpp">
+      <Filter>Source Files\asf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\asf\asfproperties.cpp">
+      <Filter>Source Files\asf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\asf\asftag.cpp">
+      <Filter>Source Files\asf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ape\apefile.cpp">
+      <Filter>Source Files\ape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ape\apefooter.cpp">
+      <Filter>Source Files\ape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ape\apeitem.cpp">
+      <Filter>Source Files\ape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ape\apeproperties.cpp">
+      <Filter>Source Files\ape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ape\apetag.cpp">
+      <Filter>Source Files\ape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tbytevector.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tbytevectorlist.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tbytevectorstream.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tdebug.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tdebuglistener.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tfile.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tfilestream.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tiostream.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tpropertymap.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\trefcounter.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tstring.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tstringlist.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\toolkit\tzlib.cpp">
+      <Filter>Source Files\toolkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\flac\flacfile.cpp">
+      <Filter>Source Files\flac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\flac\flacmetadatablock.cpp">
+      <Filter>Source Files\flac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\flac\flacpicture.cpp">
+      <Filter>Source Files\flac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\flac\flacproperties.cpp">
+      <Filter>Source Files\flac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\flac\flacunknownmetadatablock.cpp">
+      <Filter>Source Files\flac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\it\itfile.cpp">
+      <Filter>Source Files\it</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\it\itproperties.cpp">
+      <Filter>Source Files\it</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mod\modfile.cpp">
+      <Filter>Source Files\mod</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mod\modfilebase.cpp">
+      <Filter>Source Files\mod</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mod\modproperties.cpp">
+      <Filter>Source Files\mod</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mod\modtag.cpp">
+      <Filter>Source Files\mod</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mp4\mp4atom.cpp">
+      <Filter>Source Files\mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mp4\mp4coverart.cpp">
+      <Filter>Source Files\mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mp4\mp4file.cpp">
+      <Filter>Source Files\mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mp4\mp4item.cpp">
+      <Filter>Source Files\mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mp4\mp4properties.cpp">
+      <Filter>Source Files\mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mp4\mp4tag.cpp">
+      <Filter>Source Files\mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpc\mpcfile.cpp">
+      <Filter>Source Files\mpc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpc\mpcproperties.cpp">
+      <Filter>Source Files\mpc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\mpegfile.cpp">
+      <Filter>Source Files\mpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\mpegheader.cpp">
+      <Filter>Source Files\mpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\mpegproperties.cpp">
+      <Filter>Source Files\mpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\xingheader.cpp">
+      <Filter>Source Files\mpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v1\id3v1genres.cpp">
+      <Filter>Source Files\mpeg\id3v1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v1\id3v1tag.cpp">
+      <Filter>Source Files\mpeg\id3v1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\id3v2extendedheader.cpp">
+      <Filter>Source Files\mpeg\id3v2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\id3v2footer.cpp">
+      <Filter>Source Files\mpeg\id3v2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\id3v2frame.cpp">
+      <Filter>Source Files\mpeg\id3v2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\id3v2framefactory.cpp">
+      <Filter>Source Files\mpeg\id3v2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\id3v2header.cpp">
+      <Filter>Source Files\mpeg\id3v2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\id3v2synchdata.cpp">
+      <Filter>Source Files\mpeg\id3v2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\id3v2tag.cpp">
+      <Filter>Source Files\mpeg\id3v2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\attachedpictureframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\chapterframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\commentsframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\eventtimingcodesframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\generalencapsulatedobjectframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\ownershipframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\podcastframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\popularimeterframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\privateframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\relativevolumeframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\synchronizedlyricsframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\tableofcontentsframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\textidentificationframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\uniquefileidentifierframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\unknownframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\unsynchronizedlyricsframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\mpeg\id3v2\frames\urllinkframe.cpp">
+      <Filter>Source Files\mpeg\id3v2\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\oggfile.cpp">
+      <Filter>Source Files\ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\oggpage.cpp">
+      <Filter>Source Files\ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\oggpageheader.cpp">
+      <Filter>Source Files\ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\xiphcomment.cpp">
+      <Filter>Source Files\ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\flac\oggflacfile.cpp">
+      <Filter>Source Files\ogg\flac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\opus\opusfile.cpp">
+      <Filter>Source Files\ogg\opus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\opus\opusproperties.cpp">
+      <Filter>Source Files\ogg\opus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\speex\speexfile.cpp">
+      <Filter>Source Files\ogg\speex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\speex\speexproperties.cpp">
+      <Filter>Source Files\ogg\speex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\vorbis\vorbisfile.cpp">
+      <Filter>Source Files\ogg\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\ogg\vorbis\vorbisproperties.cpp">
+      <Filter>Source Files\ogg\vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\riff\rifffile.cpp">
+      <Filter>Source Files\riff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\riff\aiff\aifffile.cpp">
+      <Filter>Source Files\riff\aiff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\riff\aiff\aiffproperties.cpp">
+      <Filter>Source Files\riff\aiff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\riff\wav\infotag.cpp">
+      <Filter>Source Files\riff\wav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\riff\wav\wavfile.cpp">
+      <Filter>Source Files\riff\wav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\riff\wav\wavproperties.cpp">
+      <Filter>Source Files\riff\wav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\s3m\s3mfile.cpp">
+      <Filter>Source Files\s3m</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\s3m\s3mproperties.cpp">
+      <Filter>Source Files\s3m</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\trueaudio\trueaudiofile.cpp">
+      <Filter>Source Files\trueaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\trueaudio\trueaudioproperties.cpp">
+      <Filter>Source Files\trueaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\wavpack\wavpackfile.cpp">
+      <Filter>Source Files\wavpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\wavpack\wavpackproperties.cpp">
+      <Filter>Source Files\wavpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\xm\xmfile.cpp">
+      <Filter>Source Files\xm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\taglib\xm\xmproperties.cpp">
+      <Filter>Source Files\xm</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\taglib\toolkit\tlist.tcc">
+      <Filter>Header Files\toolkit</Filter>
+    </None>
+    <None Include="..\..\..\..\taglib\toolkit\tmap.tcc">
+      <Filter>Header Files\toolkit</Filter>
+    </None>
+  </ItemGroup>
+</Project>
