@@ -43,7 +43,7 @@ SET(test_runner_SRCS
   #test_id3v1.cpp
   #test_id3v2.cpp
   #test_xiphcomment.cpp
-  #test_aiff.cpp
+  test_aiff.cpp
   #test_riff.cpp
   #test_ogg.cpp
   #test_oggflac.cpp
