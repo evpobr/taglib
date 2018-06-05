@@ -46,3 +46,7 @@ taglib.xcodeproj
 CMakeScripts
 
 /*[Bb]uild*/
+
+.vs/
+.vscode/
+CMakeSettings.json
