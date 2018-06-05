@@ -40,7 +40,6 @@ set(tag_HDRS
   tag.h
   fileref.h
   audioproperties.h
-  taglib_export.h
   toolkit/taglib.h
   toolkit/tstring.h
   toolkit/tlist.h
@@ -368,6 +367,11 @@ set(tag_LIB_SRCS
 
 add_library(tag ${tag_LIB_SRCS} ${tag_HDRS})
 
+target_include_directories(tag
+  PUBLIC
+	$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
+)
+
 if(HAVE_ZLIB AND NOT HAVE_ZLIB_SOURCE)
   target_link_libraries(tag ${ZLIB_LIBRARIES})
 endif()
@@ -380,6 +384,12 @@ set_target_properties(tag PROPERTIES
   LINK_INTERFACE_LIBRARIES ""
   PUBLIC_HEADER "${tag_HDRS}"
 )
+if(BUILD_SHARED_LIBS)
+  set_target_properties(tag PROPERTIES
+    CXX_VISIBILITY_PRESET hidden
+    VISIBILITY_INLINES_HIDDEN ON
+  )
+endif()
 if(BUILD_FRAMEWORK)
   unset(INSTALL_NAME_DIR)
   set_target_properties(tag PROPERTIES 
@@ -389,6 +399,14 @@ if(BUILD_FRAMEWORK)
       SOVERSION "A"
       )
 endif()
+
+include(GenerateExportHeader)
+generate_export_header(tag
+  BASE_NAME TAGLIB
+  STATIC_DEFINE TAGLIB_STATIC
+)
+target_sources(tag PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/taglib_export.h)
+list(APPEND tag_HDRS ${CMAKE_CURRENT_BINARY_DIR}/taglib_export.h)
 
 install(TARGETS tag
   FRAMEWORK DESTINATION ${FRAMEWORK_INSTALL_DIR}
