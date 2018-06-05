@@ -231,7 +231,7 @@ endif()
 # Determine whether CppUnit is installed.
 
 if(BUILD_TESTS AND NOT BUILD_SHARED_LIBS)
-  find_package(CppUnit)
+  find_package(CppUnit 1.12.0)
   if(NOT CppUnit_FOUND)
     message(STATUS "CppUnit not found, disabling tests.")
     set(BUILD_TESTS OFF)
