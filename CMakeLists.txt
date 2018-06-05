@@ -21,9 +21,6 @@ if(APPLE)
     set(FRAMEWORK_INSTALL_DIR "/Library/Frameworks" CACHE STRING "Directory to install frameworks to.")
   endif()
 endif()
-if(NOT BUILD_SHARED_LIBS)
-  add_definitions(-DTAGLIB_STATIC)
-endif()
 option(ENABLE_STATIC_RUNTIME "Visual Studio, link with runtime statically" OFF)
 
 option(ENABLE_CCACHE "Use ccache when building libtag" OFF)
@@ -33,11 +30,6 @@ if(ENABLE_CCACHE)
     set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
     set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK ccache)
   endif()
-endif()
-
-option(VISIBILITY_HIDDEN "Build with -fvisibility=hidden" OFF)
-if(VISIBILITY_HIDDEN)
-  add_definitions(-fvisibility=hidden)
 endif()
 
 option(BUILD_TESTS "Build the test suite" OFF)
@@ -52,6 +44,7 @@ if(PLATFORM_WINRT)
 endif()
 
 add_definitions(-DHAVE_CONFIG_H)
+
 set(TESTS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests/")
 
 ## the following are directories where stuff will be installed to
@@ -128,7 +121,6 @@ if(NOT HAVE_ZLIB AND ZLIB_SOURCE)
   set(HAVE_ZLIB_SOURCE 1)
 endif()
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
 configure_file(config.h.cmake "${CMAKE_CURRENT_BINARY_DIR}/config.h")
 
 option(TRACE_IN_RELEASE "Output debug messages even in release mode"  OFF)
