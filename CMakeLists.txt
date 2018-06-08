@@ -126,6 +126,24 @@ if(TRACE_IN_RELEASE)
   set(TRACE_IN_RELEASE TRUE)
 endif()
 
+include(FeatureSummary)
+
+set_package_properties(ZLIB PROPERTIES PURPOSE "Enables compressed frames support for ID3v2 tag")
+set_package_properties(CppUnit PROPERTIES PURPOSE "Enables tests")
+
+add_feature_info(BuildSharedLibs BUILD_SHARED_LIBS "build shared libraries.")
+add_feature_info(BuildFramework BUILD_FRAMEWORK "build an OS X framework (MacOS only).")
+add_feature_info(EnableStaticRuntime ENABLE_STATIC_RUNTIME "link with runtime statically (Visual Studio only).")
+add_feature_info(EnableCCache ENABLE_CCACHE "speed up builds with ccache compiler cache tool (requires ccache).")
+add_feature_info(BuildExamples BUILD_EXAMPLES "build example programs.")
+add_feature_info(BuildBindings BUILD_BINDINGS "build tag_c library, plain C API interface to TagLib.")
+add_feature_info(BuildTests BUILD_TESTS "build test suite (requires CppUnit library installed and BUILD_SHARED_LIBS option disabled).")
+add_feature_info(NoiTunesHacks NO_ITUNES_HACKS "disable workarounds for iTunes bugs")
+add_feature_info(PlatformWinRT PLATFORM_WINRT "enable WinRT (WindowsStore) support")
+
+
+feature_summary(WHAT ALL)
+
 add_subdirectory(taglib)
 
 if(BUILD_BINDINGS)
