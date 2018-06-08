@@ -30,7 +30,6 @@ if(ENABLE_CCACHE)
   endif()
 endif()
 
-option(BUILD_TESTS "Build the test suite" OFF)
 option(BUILD_EXAMPLES "Build the examples" OFF)
 option(BUILD_BINDINGS "Build the bindings" ON)
 
@@ -50,6 +49,11 @@ set(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)")
 set(EXEC_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}" CACHE PATH "Base directory for executables and libraries")
 set(BIN_INSTALL_DIR "${EXEC_INSTALL_PREFIX}/bin" CACHE PATH "The subdirectory to the binaries prefix (default prefix/bin)")
 set(LIB_INSTALL_DIR "${EXEC_INSTALL_PREFIX}/lib${LIB_SUFFIX}" CACHE PATH "The subdirectory relative to the install prefix where libraries will be installed (default is /lib${LIB_SUFFIX})")
+if(UNIX)
+  set(CMAKE_PKG_INSTALL_DIR "${EXEC_INSTALL_PREFIX}/lib${LIB_SUFFIX}/cmake/taglib")
+else()
+  set(CMAKE_PKG_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/cmake")
+endif()
 set(INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "The subdirectory to the header prefix")
 
 if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
@@ -126,6 +130,11 @@ if(TRACE_IN_RELEASE)
   set(TRACE_IN_RELEASE TRUE)
 endif()
 
+
+include(CMakeDependentOption)
+
+cmake_dependent_option(BUILD_TESTING "Build tests" ON "CppUnit_FOUND;NOT BUILD_SHARED_LIBS" OFF)
+
 include(FeatureSummary)
 
 set_package_properties(ZLIB PROPERTIES PURPOSE "Enables compressed frames support for ID3v2 tag")
@@ -137,7 +146,7 @@ add_feature_info(EnableStaticRuntime ENABLE_STATIC_RUNTIME "link with runtime st
 add_feature_info(EnableCCache ENABLE_CCACHE "speed up builds with ccache compiler cache tool (requires ccache).")
 add_feature_info(BuildExamples BUILD_EXAMPLES "build example programs.")
 add_feature_info(BuildBindings BUILD_BINDINGS "build tag_c library, plain C API interface to TagLib.")
-add_feature_info(BuildTests BUILD_TESTS "build test suite (requires CppUnit library installed and BUILD_SHARED_LIBS option disabled).")
+add_feature_info(BuildTesting BUILD_TESTING "build test suite (requires CppUnit library installed and BUILD_SHARED_LIBS option disabled).")
 add_feature_info(NoiTunesHacks NO_ITUNES_HACKS "disable workarounds for iTunes bugs")
 add_feature_info(PlatformWinRT PLATFORM_WINRT "enable WinRT (WindowsStore) support")
 
@@ -162,6 +171,16 @@ endif()
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.cmake" "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile")
 file(COPY doc/taglib.png DESTINATION doc)
 add_custom_target(docs doxygen)
+
+install(EXPORT taglib-exports DESTINATION ${CMAKE_PKG_INSTALL_DIR})
+install(FILES taglib-config.cmake DESTINATION ${CMAKE_PKG_INSTALL_DIR})
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(taglib-config-version.cmake
+  VERSION ${TAGLIB_LIB_VERSION_STRING}
+  COMPATIBILITY AnyNewerVersion
+)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/taglib-config-version.cmake DESTINATION ${CMAKE_PKG_INSTALL_DIR})
 
 # uninstall target
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in" "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake" IMMEDIATE @ONLY)
