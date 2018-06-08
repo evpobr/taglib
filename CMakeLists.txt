@@ -4,10 +4,6 @@ project(taglib)
 
 set(CMAKE_CXX_STANDARD 11)
 
-if(NOT ${CMAKE_VERSION} VERSION_LESS 2.8.12)
-  cmake_policy(SET CMP0022 OLD)
-endif()
-
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
 if(DEFINED ENABLE_STATIC)
