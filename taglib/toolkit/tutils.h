@@ -48,6 +48,7 @@
 #include <cstdio>
 #include <cstdarg>
 #include <cstring>
+#include <climits>
 
 namespace TagLib
 {
