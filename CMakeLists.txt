@@ -172,7 +172,7 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.cmake" "${CMAKE_CURRENT_BIN
 file(COPY doc/taglib.png DESTINATION doc)
 add_custom_target(docs doxygen)
 
-install(EXPORT taglib-exports DESTINATION ${CMAKE_PKG_INSTALL_DIR})
+install(EXPORT taglib-exports NAMESPACE TagLib:: DESTINATION ${CMAKE_PKG_INSTALL_DIR})
 install(FILES taglib-config.cmake DESTINATION ${CMAKE_PKG_INSTALL_DIR})
 
 include(CMakePackageConfigHelpers)
