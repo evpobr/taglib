@@ -382,6 +382,14 @@ endif()
 
 target_compile_definitions(tag PRIVATE HAVE_CONFIG_H)
 
+include(GenerateExportHeader)
+generate_export_header(tag
+  BASE_NAME TAGLIB
+  STATIC_DEFINE TAGLIB_STATIC
+)
+target_sources(tag PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/taglib_export.h)
+list(APPEND tag_HDRS ${CMAKE_CURRENT_BINARY_DIR}/taglib_export.h)
+
 set_target_properties(tag PROPERTIES
   VERSION ${TAGLIB_SOVERSION_MAJOR}.${TAGLIB_SOVERSION_MINOR}.${TAGLIB_SOVERSION_PATCH}
   SOVERSION ${TAGLIB_SOVERSION_MAJOR}
@@ -404,14 +412,6 @@ if(BUILD_FRAMEWORK)
       SOVERSION "A"
       )
 endif()
-
-include(GenerateExportHeader)
-generate_export_header(tag
-  BASE_NAME TAGLIB
-  STATIC_DEFINE TAGLIB_STATIC
-)
-target_sources(tag PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/taglib_export.h)
-list(APPEND tag_HDRS ${CMAKE_CURRENT_BINARY_DIR}/taglib_export.h)
 
 install(TARGETS tag
   EXPORT taglib-exports
