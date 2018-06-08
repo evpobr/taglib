@@ -5,7 +5,7 @@ add_library(tag_c tag_c.cpp ${tag_c_HDRS})
 target_include_directories(tag_c
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-	$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/taglib>
+	$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}>
   PRIVATE
     ${PROJECT_BINARY_DIR}
 )
