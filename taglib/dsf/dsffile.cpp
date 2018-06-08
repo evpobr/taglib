@@ -28,9 +28,10 @@
 #include <id3v2tag.h>
 #include <tstringlist.h>
 #include <tpropertymap.h>
-#include <tsmartptr.h>
 
 #include "dsffile.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -46,8 +47,8 @@ public:
   long long fileSize;
   long long metadataOffset;
 
-  SCOPED_PTR<AudioProperties> properties;
-  SCOPED_PTR<ID3v2::Tag> tag;
+  std::unique_ptr<AudioProperties> properties;
+  std::unique_ptr<ID3v2::Tag> tag;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

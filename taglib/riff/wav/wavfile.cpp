@@ -28,12 +28,13 @@
 #include <tstringlist.h>
 #include <tpropertymap.h>
 #include <tagutils.h>
-#include <tsmartptr.h>
 
 #include "wavfile.h"
 #include "id3v2tag.h"
 #include "infotag.h"
 #include "tagunion.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -49,7 +50,7 @@ public:
     hasID3v2(false),
     hasInfo(false) {}
 
-  SCOPED_PTR<AudioProperties> properties;
+  std::unique_ptr<AudioProperties> properties;
   DoubleTagUnion tag;
 
   bool hasID3v2;

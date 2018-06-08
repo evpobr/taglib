@@ -27,10 +27,11 @@
 #include <tstring.h>
 #include <tfile.h>
 #include <tdebug.h>
-#include <tsmartptr.h>
 
 #include "mpegheader.h"
 #include "mpegutils.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -56,7 +57,7 @@ class MPEG::Header::HeaderPrivate
 {
 public:
   HeaderPrivate() :
-    data(new HeaderData())
+    data(std::make_shared<HeaderData>())
   {
     data->isValid           = false;
     data->layer             = 0;
@@ -71,7 +72,7 @@ public:
     data->samplesPerFrame   = 0;
   }
 
-  SHARED_PTR<HeaderData> data;
+ std::shared_ptr<HeaderData> data;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

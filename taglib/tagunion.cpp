@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
     copyright            : (C) 2002 - 2008 by Scott Wheeler
     email                : wheeler@kde.org
  ***************************************************************************/
@@ -27,7 +27,8 @@
 #include <tstringlist.h>
 #include <tpropertymap.h>
 #include <tpicturemap.h>
-#include <tsmartptr.h>
+
+#include <memory>
 
 #define stringUnion(method)                                               \
   for(size_t j = 0; j < COUNT; ++j) {                                     \
@@ -65,7 +66,7 @@ namespace TagLib
   class TagUnion<COUNT>::TagUnionPrivate
   {
   public:
-    SCOPED_PTR<Tag> tags[COUNT];
+    std::unique_ptr<Tag> tags[COUNT];
   };
 
   template <size_t COUNT>

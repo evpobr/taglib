@@ -23,9 +23,10 @@
  *   http://www.mozilla.org/MPL/                                           *
  ***************************************************************************/
 
-#include <algorithm>
-#include <tsmartptr.h>
 #include "tpicture.h"
+
+#include <algorithm>
+#include <memory>
 
 using namespace TagLib;
 
@@ -47,9 +48,9 @@ class Picture::PicturePrivate
 {
 public:
   PicturePrivate() :
-    data(new PictureData()) {}
+    data(std::make_shared<PictureData>()) {}
 
-  SHARED_PTR<PictureData> data;
+  std::shared_ptr<PictureData> data;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

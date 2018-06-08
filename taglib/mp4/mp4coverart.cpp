@@ -25,8 +25,9 @@
 
 #include "taglib.h"
 #include "tdebug.h"
-#include "tsmartptr.h"
 #include "mp4coverart.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -43,13 +44,13 @@ class MP4::CoverArt::CoverArtPrivate
 {
 public:
   CoverArtPrivate(Format f, const ByteVector &v) :
-    data(new CoverArtData())
+    data(std::make_shared<CoverArtData>())
   {
     data->format = f;
     data->data   = v;
   }
 
-  SHARED_PTR<CoverArtData> data;
+  std::shared_ptr<CoverArtData> data;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

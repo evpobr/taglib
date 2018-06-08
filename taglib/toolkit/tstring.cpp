@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
     copyright            : (C) 2002 - 2008 by Scott Wheeler
     email                : wheeler@kde.org
  ***************************************************************************/
@@ -30,10 +30,11 @@
 
 #include <tdebug.h>
 #include <tstringlist.h>
-#include <tsmartptr.h>
 #include <tutils.h>
 
 #include "tstring.h"
+
+#include <memory>
 
 namespace
 {
@@ -142,17 +143,17 @@ class String::StringPrivate
 {
 public:
   StringPrivate() :
-    data(new std::wstring()) {}
+    data(std::make_shared<std::wstring>()) {}
 
   /*!
    * Stores string in UTF-16. The byte order depends on the CPU endian.
    */
-  SHARED_PTR<std::wstring> data;
+  std::shared_ptr<std::wstring> data;
 
   /*!
    * This is only used to hold the the most recent value of toCString().
    */
-  SHARED_PTR<std::string> cstring;
+  std::shared_ptr<std::string> cstring;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

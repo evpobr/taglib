@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
     copyright            : (C) 2002 - 2008 by Scott Wheeler
     email                : wheeler@kde.org
  ***************************************************************************/
@@ -27,9 +27,10 @@
 #include "tfilestream.h"
 #include "tstring.h"
 #include "tdebug.h"
-#include "tsmartptr.h"
 #include "tpropertymap.h"
 #include "audioproperties.h"
+
+#include <memory>
 
 using namespace TagLib;
 

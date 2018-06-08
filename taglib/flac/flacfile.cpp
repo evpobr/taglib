@@ -30,7 +30,6 @@
 #include <tagunion.h>
 #include <tpropertymap.h>
 #include <tagutils.h>
-#include <tsmartptr.h>
 
 #include <id3v2header.h>
 #include <id3v2tag.h>
@@ -42,11 +41,13 @@
 #include "flacmetadatablock.h"
 #include "flacunknownmetadatablock.h"
 
+#include <memory>
+
 using namespace TagLib;
 
 namespace
 {
-  typedef List<SHARED_PTR<FLAC::MetadataBlock> > BlockList;
+  typedef List<std::shared_ptr<FLAC::MetadataBlock> > BlockList;
   typedef BlockList::Iterator BlockIterator;
   typedef BlockList::Iterator BlockConstIterator;
 
@@ -64,7 +65,7 @@ namespace TagLib
   {
     // Enables BlockList::find() to take raw pointers.
 
-    bool operator==(SHARED_PTR<MetadataBlock> lhs, MetadataBlock *rhs)
+    bool operator==(std::shared_ptr<MetadataBlock> lhs, MetadataBlock *rhs)
     {
       return lhs.get() == rhs;
     }
@@ -95,7 +96,7 @@ public:
 
   TripleTagUnion tag;
 
-  SCOPED_PTR<AudioProperties> properties;
+  std::unique_ptr<AudioProperties> properties;
   ByteVector xiphCommentData;
   BlockList blocks;
 
@@ -186,7 +187,7 @@ bool FLAC::File::save()
     }
   }
 
-  d->blocks.append(SHARED_PTR<MetadataBlock>(
+  d->blocks.append(std::shared_ptr<MetadataBlock>(
     new UnknownMetadataBlock(MetadataBlock::VorbisComment, d->xiphCommentData)));
 
   // Render data for the metadata blocks
@@ -327,7 +328,7 @@ List<FLAC::Picture *> FLAC::File::pictureList()
 
 void FLAC::File::addPicture(Picture *picture)
 {
-  d->blocks.append(SHARED_PTR<Picture>(picture));
+  d->blocks.append(std::shared_ptr<Picture>(picture));
 }
 
 void FLAC::File::removePicture(Picture *picture)
@@ -499,7 +500,7 @@ void FLAC::File::scan()
       return;
     }
 
-    SHARED_PTR<MetadataBlock> block;
+    std::shared_ptr<MetadataBlock> block;
 
     // Found the vorbis-comment
     if(blockType == MetadataBlock::VorbisComment) {
@@ -512,7 +513,7 @@ void FLAC::File::scan()
       }
     }
     else if(blockType == MetadataBlock::Picture) {
-      SHARED_PTR<FLAC::Picture> picture(new FLAC::Picture());
+      std::shared_ptr<FLAC::Picture> picture = std::make_shared<FLAC::Picture>();
       if(picture->parse(data)) {
         block = picture;
       }

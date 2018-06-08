@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
     copyright            : (C) 2002 - 2008 by Scott Wheeler
     email                : wheeler@kde.org
  ***************************************************************************/
@@ -25,13 +25,14 @@
 
 #include <tdebug.h>
 #include <tstring.h>
-#include <tsmartptr.h>
 
 #include "mpegproperties.h"
 #include "mpegfile.h"
 #include "xingheader.h"
 #include "apetag.h"
 #include "apefooter.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -50,7 +51,7 @@ public:
     isCopyrighted(false),
     isOriginal(false) {}
 
-  SCOPED_PTR<XingHeader> xingHeader;
+  std::unique_ptr<XingHeader> xingHeader;
   int length;
   int bitrate;
   int sampleRate;

@@ -32,10 +32,11 @@
 
 #include <tstring.h>
 #include <tdebug.h>
-#include <tsmartptr.h>
 #include <tutils.h>
 
 #include "tbytevector.h"
+
+#include <memory>
 
 // This is a bit ugly to keep writing over and over again.
 
@@ -244,7 +245,7 @@ class ByteVector::ByteVectorPrivate
 {
 public:
   ByteVectorPrivate() :
-    data(new std::vector<char>()),
+    data(std::make_shared<std::vector<char>>()),
     offset(0),
     length(0) {}
 
@@ -254,16 +255,16 @@ public:
     length(l) {}
 
   ByteVectorPrivate(size_t l, char c) :
-    data(new std::vector<char>(l, c)),
+    data(std::make_shared<std::vector<char>>(l, c)),
     offset(0),
     length(l) {}
 
   ByteVectorPrivate(const char *s, size_t l) :
-    data(new std::vector<char>(s, s + l)),
+    data(std::make_shared<std::vector<char>>(s, s + l)),
     offset(0),
     length(l) {}
 
-  SHARED_PTR<std::vector<char> > data;
+  std::shared_ptr<std::vector<char> > data;
   size_t offset;
   size_t length;
 };

@@ -25,9 +25,10 @@
 
 #include "taglib.h"
 #include "tdebug.h"
-#include "tsmartptr.h"
 #include "mp4item.h"
 #include "tutils.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -63,7 +64,7 @@ public:
     data->type         = MP4::Item::TypeUndefined;
   }
 
-  SHARED_PTR<ItemData> data;
+  std::shared_ptr<ItemData> data;
 };
 
 MP4::Item::Item() :

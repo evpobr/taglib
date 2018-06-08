@@ -25,12 +25,13 @@
 
 #include <taglib.h>
 #include <tdebug.h>
-#include <tsmartptr.h>
 
 #include "asfattribute.h"
 #include "asffile.h"
 #include "asfpicture.h"
 #include "asfutils.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -50,9 +51,9 @@ class ASF::Picture::PicturePrivate
 {
 public:
   PicturePrivate() :
-    data(new PictureData()) {}
+    data(std::make_shared<PictureData>()) {}
 
-  SHARED_PTR<PictureData> data;
+  std::shared_ptr<PictureData> data;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

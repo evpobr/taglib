@@ -25,9 +25,10 @@
 
 #include <tbytevectorlist.h>
 #include <tdebug.h>
-#include <tsmartptr.h>
 
 #include "apeitem.h"
+
+#include <memory>
 
 using namespace TagLib;
 using namespace APE;
@@ -49,9 +50,9 @@ class APE::Item::ItemPrivate
 {
 public:
   ItemPrivate() :
-    data(new ItemData()) {}
+    data(std::make_shared<ItemData>()) {}
 
-  SHARED_PTR<ItemData> data;
+  std::shared_ptr<ItemData> data;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -187,21 +188,21 @@ int APE::Item::size() const
 {
   size_t result = 8 + d->data->key.size() + 1;
   switch(d->data->type) {
-    case Text:
-      if(!d->data->text.isEmpty()) {
-        StringList::ConstIterator it = d->data->text.begin();
+  case Text:
+    if(!d->data->text.isEmpty()) {
+      StringList::ConstIterator it = d->data->text.begin();
 
-        result += it->data(String::UTF8).size();
-        it++;
-        for(; it != d->data->text.end(); ++it)
-          result += 1 + it->data(String::UTF8).size();
-      }
-      break;
+      result += it->data(String::UTF8).size();
+      it++;
+      for(; it != d->data->text.end(); ++it)
+        result += 1 + it->data(String::UTF8).size();
+    }
+    break;
 
-    case Binary:
-    case Locator:
-      result += d->data->value.size();
-      break;
+  case Binary:
+  case Locator:
+    result += d->data->value.size();
+    break;
   }
   return static_cast<int>(result);
 }
@@ -222,17 +223,17 @@ String APE::Item::toString() const
 bool APE::Item::isEmpty() const
 {
   switch(d->data->type) {
-    case Text:
-      if(d->data->text.isEmpty())
-        return true;
-      if(d->data->text.size() == 1 && d->data->text.front().isEmpty())
-        return true;
-      return false;
-    case Binary:
-    case Locator:
-      return d->data->value.isEmpty();
-    default:
-      return false;
+  case Text:
+    if(d->data->text.isEmpty())
+      return true;
+    if(d->data->text.size() == 1 && d->data->text.front().isEmpty())
+      return true;
+    return false;
+  case Binary:
+  case Locator:
+    return d->data->value.isEmpty();
+  default:
+    return false;
   }
 }
 

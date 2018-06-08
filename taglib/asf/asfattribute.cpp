@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
     copyright            : (C) 2005-2007 by Lukáš Lalinský
     email                : lalinsky@gmail.com
  **************************************************************************/
@@ -25,11 +25,12 @@
 
 #include <taglib.h>
 #include <tdebug.h>
-#include <tsmartptr.h>
 
 #include "asfattribute.h"
 #include "asffile.h"
 #include "asfutils.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -56,12 +57,12 @@ class ASF::Attribute::AttributePrivate
 {
 public:
   AttributePrivate() :
-    data(new AttributeData())
+    data(std::make_shared<AttributeData>())
   {
     data->pictureValue = ASF::Picture::fromInvalid();
   }
 
-  SHARED_PTR<AttributeData> data;
+  std::shared_ptr<AttributeData> data;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

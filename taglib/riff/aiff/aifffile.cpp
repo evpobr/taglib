@@ -29,9 +29,10 @@
 #include <tstringlist.h>
 #include <tpropertymap.h>
 #include <tagutils.h>
-#include <tsmartptr.h>
 
 #include "aifffile.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -41,8 +42,8 @@ public:
   FilePrivate() :
     hasID3v2(false) {}
 
-  SCOPED_PTR<AudioProperties> properties;
-  SCOPED_PTR<ID3v2::Tag> tag;
+  std::unique_ptr<AudioProperties> properties;
+  std::unique_ptr<ID3v2::Tag> tag;
 
   bool hasID3v2;
 };

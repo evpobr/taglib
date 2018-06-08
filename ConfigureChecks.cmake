@@ -45,24 +45,6 @@ if(NOT WIN32)
   endif()
 endif()
 
-# Enable check_cxx_source_compiles() to work with Boost "header-only" libraries.
-
-find_package(Boost)
-if(Boost_FOUND)
-  set(CMAKE_REQUIRED_INCLUDES "${CMAKE_REQUIRED_INCLUDES};${Boost_INCLUDE_DIRS}")
-endif()
-
-# Determine which kind of smart pointers your compiler supports.
-
-check_cxx_source_compiles("
-  #include <memory>
-  int main() {
-    std::shared_ptr<int> x;
-    std::unique_ptr<int> y;
-    return 0;
-  }
-" HAVE_STD_SMART_PTR)
-
 # Determine which kind of byte swap functions your compiler supports.
 
 check_cxx_source_compiles("

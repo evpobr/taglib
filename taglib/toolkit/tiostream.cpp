@@ -26,10 +26,11 @@
 #ifdef _WIN32
 # include <windows.h>
 # include <tstring.h>
-# include <tsmartptr.h>
 #endif
 
 #include "tiostream.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -54,7 +55,7 @@ class FileName::FileNamePrivate
 {
 public:
   FileNamePrivate() :
-    data(new std::wstring()) {}
+    data(std::make_shared<std::wstring>()) {}
 
   FileNamePrivate(const wchar_t *name) :
     data(new std::wstring(name)) {}
@@ -62,7 +63,7 @@ public:
   FileNamePrivate(const char *name) :
     data(new std::wstring(ansiToUnicode(name))) {}
 
-  SHARED_PTR<std::wstring> data;
+  std::shared_ptr<std::wstring> data;
 };
 
 FileName::FileName(const wchar_t *name) :

@@ -31,7 +31,6 @@
 #include <tfilestream.h>
 #include <tstring.h>
 #include <tdebug.h>
-#include <tsmartptr.h>
 
 #include "fileref.h"
 #include "asffile.h"
@@ -53,6 +52,8 @@
 #include "itfile.h"
 #include "xmfile.h"
 #include "dsffile.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -208,9 +209,9 @@ class FileRef::FileRefPrivate
 {
 public:
   FileRefPrivate() :
-    data(new FileRefData()) {}
+    data(std::make_shared<FileRefData>()) {}
 
-  SHARED_PTR<FileRefData> data;
+  std::shared_ptr<FileRefData> data;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

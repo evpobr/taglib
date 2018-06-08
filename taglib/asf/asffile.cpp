@@ -28,12 +28,13 @@
 #include <tpropertymap.h>
 #include <tstring.h>
 #include <tagutils.h>
-#include <tsmartptr.h>
 
 #include "asffile.h"
 #include "asftag.h"
 #include "asfproperties.h"
 #include "asfutils.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -51,7 +52,7 @@ public:
   class MetadataObject;
   class MetadataLibraryObject;
 
-  typedef List<SHARED_PTR<BaseObject> > ObjectList;
+  typedef List<std::shared_ptr<BaseObject> > ObjectList;
   typedef ObjectList::ConstIterator     ObjectConstIterator;
 
   FilePrivate():
@@ -59,16 +60,16 @@ public:
 
   unsigned long long headerSize;
 
-  SCOPED_PTR<ASF::Tag> tag;
-  SCOPED_PTR<ASF::AudioProperties> properties;
+  std::unique_ptr<ASF::Tag> tag;
+  std::unique_ptr<ASF::AudioProperties> properties;
 
   ObjectList objects;
 
-  SHARED_PTR<ContentDescriptionObject>         contentDescriptionObject;
-  SHARED_PTR<ExtendedContentDescriptionObject> extendedContentDescriptionObject;
-  SHARED_PTR<HeaderExtensionObject>            headerExtensionObject;
-  SHARED_PTR<MetadataObject>                   metadataObject;
-  SHARED_PTR<MetadataLibraryObject>            metadataLibraryObject;
+  std::shared_ptr<ContentDescriptionObject>         contentDescriptionObject;
+  std::shared_ptr<ExtendedContentDescriptionObject> extendedContentDescriptionObject;
+  std::shared_ptr<HeaderExtensionObject>            headerExtensionObject;
+  std::shared_ptr<MetadataObject>                   metadataObject;
+  std::shared_ptr<MetadataLibraryObject>            metadataLibraryObject;
 };
 
 namespace
@@ -375,7 +376,7 @@ void ASF::File::FilePrivate::HeaderExtensionObject::parse(ASF::File *file, unsig
       file->setValid(false);
       break;
     }
-    SHARED_PTR<BaseObject> obj;
+    std::shared_ptr<BaseObject> obj;
     if(guid == metadataGuid) {
       file->d->metadataObject.reset(new MetadataObject());
       obj = file->d->metadataObject;
@@ -620,8 +621,8 @@ void ASF::File::read()
   }
   seek(2, Current);
 
-  SHARED_PTR<FilePrivate::FilePropertiesObject>   filePropertiesObject;
-  SHARED_PTR<FilePrivate::StreamPropertiesObject> streamPropertiesObject;
+  std::shared_ptr<FilePrivate::FilePropertiesObject>   filePropertiesObject;
+  std::shared_ptr<FilePrivate::StreamPropertiesObject> streamPropertiesObject;
   for(int i = 0; i < numObjects; i++) {
     const ByteVector guid = readBlock(16);
     if(guid.size() != 16) {
@@ -633,7 +634,7 @@ void ASF::File::read()
       setValid(false);
       break;
     }
-    SHARED_PTR<FilePrivate::BaseObject> obj;
+    std::shared_ptr<FilePrivate::BaseObject> obj;
     if(guid == filePropertiesGuid) {
       filePropertiesObject.reset(new FilePrivate::FilePropertiesObject());
       obj = filePropertiesObject;

@@ -39,11 +39,12 @@
 #include <id3v2header.h>
 #include <tpropertymap.h>
 #include <tagutils.h>
-#include <tsmartptr.h>
 
 #include "apefile.h"
 #include "apetag.h"
 #include "apefooter.h"
+
+#include <memory>
 
 using namespace TagLib;
 
@@ -67,13 +68,13 @@ public:
 
   long long ID3v1Location;
 
-  SCOPED_PTR<ID3v2::Header> ID3v2Header;
+  std::unique_ptr<ID3v2::Header> ID3v2Header;
   long long ID3v2Location;
   long long ID3v2Size;
 
   DoubleTagUnion tag;
 
-  SCOPED_PTR<AudioProperties> properties;
+  std::unique_ptr<AudioProperties> properties;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
