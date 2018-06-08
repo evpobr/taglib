@@ -57,109 +57,25 @@ namespace TagLib
     {
 
       /*!
-       * Reverses the order of bytes in an 16-bit integer.
+       * Reverses the order of bytes.
        */
-      inline unsigned short byteSwap(unsigned short x)
+      template <typename T>
+      T byteSwap(T u)
       {
-#if defined(HAVE_GCC_BYTESWAP)
+        static_assert (CHAR_BIT == 8, "CHAR_BIT != 8");
 
-        return __builtin_bswap16(x);
+        union
+        {
+          T u;
+          unsigned char u8[sizeof(T)];
+      } source, dest;
 
-#elif defined(HAVE_MSC_BYTESWAP)
+        source.u = u;
 
-        return _byteswap_ushort(x);
+        for (size_t k = 0; k < sizeof(T); k++)
+          dest.u8[k] = source.u8[sizeof(T) - k - 1];
 
-#elif defined(HAVE_GLIBC_BYTESWAP)
-
-        return __bswap_16(x);
-
-#elif defined(HAVE_MAC_BYTESWAP)
-
-        return OSSwapInt16(x);
-
-#elif defined(HAVE_OPENBSD_BYTESWAP)
-
-        return swap16(x);
-
-#else
-
-        return ((x >> 8) & 0xff) | ((x & 0xff) << 8);
-
-#endif
-      }
-
-      /*!
-       * Reverses the order of bytes in an 32-bit integer.
-       */
-      inline unsigned int byteSwap(unsigned int x)
-      {
-#if defined(HAVE_GCC_BYTESWAP)
-
-        return __builtin_bswap32(x);
-
-#elif defined(HAVE_MSC_BYTESWAP)
-
-        return _byteswap_ulong(x);
-
-#elif defined(HAVE_GLIBC_BYTESWAP)
-
-        return __bswap_32(x);
-
-#elif defined(HAVE_MAC_BYTESWAP)
-
-        return OSSwapInt32(x);
-
-#elif defined(HAVE_OPENBSD_BYTESWAP)
-
-        return swap32(x);
-
-#else
-
-        return ((x & 0xff000000u) >> 24)
-          | ((x & 0x00ff0000u) >>  8)
-          | ((x & 0x0000ff00u) <<  8)
-          | ((x & 0x000000ffu) << 24);
-
-#endif
-      }
-
-      /*!
-       * Reverses the order of bytes in an 64-bit integer.
-       */
-      inline unsigned long long byteSwap(unsigned long long x)
-      {
-#if defined(HAVE_GCC_BYTESWAP)
-
-        return __builtin_bswap64(x);
-
-#elif defined(HAVE_MSC_BYTESWAP)
-
-        return _byteswap_uint64(x);
-
-#elif defined(HAVE_GLIBC_BYTESWAP)
-
-        return __bswap_64(x);
-
-#elif defined(HAVE_MAC_BYTESWAP)
-
-        return OSSwapInt64(x);
-
-#elif defined(HAVE_OPENBSD_BYTESWAP)
-
-        return swap64(x);
-
-#else
-
-        return ((x & 0xff00000000000000ull) >> 56)
-          | ((x & 0x00ff000000000000ull) >> 40)
-          | ((x & 0x0000ff0000000000ull) >> 24)
-          | ((x & 0x000000ff00000000ull) >> 8)
-          | ((x & 0x00000000ff000000ull) << 8)
-          | ((x & 0x0000000000ff0000ull) << 24)
-          | ((x & 0x000000000000ff00ull) << 40)
-          | ((x & 0x00000000000000ffull) << 56);
-
-#endif
+        return dest.u;
       }
 
       /*!

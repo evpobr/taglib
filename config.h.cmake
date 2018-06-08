@@ -8,13 +8,6 @@
 #cmakedefine   _LARGEFILE_SOURCE ${_LARGEFILE_SOURCE}
 #cmakedefine   _FILE_OFFSET_BITS ${_FILE_OFFSET_BITS}
 
-/* Defined if your compiler supports some byte swap functions */
-#cmakedefine   HAVE_GCC_BYTESWAP 1
-#cmakedefine   HAVE_GLIBC_BYTESWAP 1
-#cmakedefine   HAVE_MSC_BYTESWAP 1
-#cmakedefine   HAVE_MAC_BYTESWAP 1
-#cmakedefine   HAVE_OPENBSD_BYTESWAP 1
-
 /* Defined if your compiler supports some safer version of vsprintf */
 #cmakedefine   HAVE_VSNPRINTF 1
 #cmakedefine   HAVE_VSPRINTF_S 1

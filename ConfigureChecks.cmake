@@ -45,65 +45,6 @@ if(NOT WIN32)
   endif()
 endif()
 
-# Determine which kind of byte swap functions your compiler supports.
-
-check_cxx_source_compiles("
-  int main() {
-    __builtin_bswap16(0);
-    __builtin_bswap32(0);
-    __builtin_bswap64(0);
-    return 0;
-  }
-" HAVE_GCC_BYTESWAP)
-
-if(NOT HAVE_GCC_BYTESWAP)
-  check_cxx_source_compiles("
-    #include <byteswap.h>
-    int main() {
-      __bswap_16(0);
-      __bswap_32(0);
-      __bswap_64(0);
-      return 0;
-    }
-  " HAVE_GLIBC_BYTESWAP)
-
-  if(NOT HAVE_GLIBC_BYTESWAP)
-    check_cxx_source_compiles("
-      #include <stdlib.h>
-      int main() {
-        _byteswap_ushort(0);
-        _byteswap_ulong(0);
-        _byteswap_uint64(0);
-        return 0;
-      }
-    " HAVE_MSC_BYTESWAP)
-
-    if(NOT HAVE_MSC_BYTESWAP)
-      check_cxx_source_compiles("
-        #include <libkern/OSByteOrder.h>
-        int main() {
-          OSSwapInt16(0);
-          OSSwapInt32(0);
-          OSSwapInt64(0);
-          return 0;
-        }
-      " HAVE_MAC_BYTESWAP)
-
-      if(NOT HAVE_MAC_BYTESWAP)
-        check_cxx_source_compiles("
-          #include <sys/endian.h>
-          int main() {
-            swap16(0);
-            swap32(0);
-            swap64(0);
-            return 0;
-          }
-        " HAVE_OPENBSD_BYTESWAP)
-      endif()
-    endif()
-  endif()
-endif()
-
 # Determine whether your compiler supports some safer version of vsprintf.
 
 check_cxx_source_compiles("
