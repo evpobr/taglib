@@ -1,5 +1,6 @@
-#include <cppunit/extensions/HelperMacros.h>
 #include "taglib.h"
+
+#include <cppunit/extensions/HelperMacros.h>
 #include "tsmartptr.h"
 #include "utils.h"
 

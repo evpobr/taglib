@@ -23,6 +23,8 @@
  *   http://www.mozilla.org/MPL/                                           *
  ***************************************************************************/
 
+#include "taglib.h"
+
 #include <algorithm>
 #include <vector>
 

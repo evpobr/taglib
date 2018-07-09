@@ -34,6 +34,8 @@
 # include <config.h>
 #endif
 
+#include "taglib.h"
+
 #if defined(HAVE_MSC_BYTESWAP)
 # include <stdlib.h>
 #elif defined(HAVE_GLIBC_BYTESWAP)

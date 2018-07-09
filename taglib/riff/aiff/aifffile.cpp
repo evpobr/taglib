@@ -23,6 +23,8 @@
  *   http://www.mozilla.org/MPL/                                           *
  ***************************************************************************/
 
+#include "taglib.h"
+
 #include <tbytevector.h>
 #include <tdebug.h>
 #include <id3v2tag.h>

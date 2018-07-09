@@ -27,7 +27,6 @@
 #define TAGLIB_REFCOUNTER_H
 
 #include "taglib_export.h"
-#include "taglib.h"
 
 #ifndef DO_NOT_DOCUMENT // Tell Doxygen to skip this class.
 /*!

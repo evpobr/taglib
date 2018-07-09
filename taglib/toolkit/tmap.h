@@ -26,7 +26,6 @@
 #ifndef TAGLIB_MAP_H
 #define TAGLIB_MAP_H
 
-#include "taglib.h"
 #include <cstddef>
 #include <map>
 

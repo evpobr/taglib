@@ -26,7 +26,6 @@
 #ifndef TAGLIB_MODFILEBASE_H
 #define TAGLIB_MODFILEBASE_H
 
-#include "taglib.h"
 #include "tfile.h"
 #include "tstring.h"
 #include "tlist.h"

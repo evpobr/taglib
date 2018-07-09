@@ -23,7 +23,6 @@
  *   http://www.mozilla.org/MPL/                                           *
  ***************************************************************************/
 
-#include <taglib.h>
 #include <tdebug.h>
 #include <tstring.h>
 #include "flacunknownmetadatablock.h"

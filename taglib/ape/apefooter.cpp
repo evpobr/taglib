@@ -29,7 +29,7 @@
 
 #include <tstring.h>
 #include <tdebug.h>
-
+#include "taglib.h"
 #include "apefooter.h"
 
 using namespace TagLib;
