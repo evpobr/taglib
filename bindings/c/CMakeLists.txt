@@ -1,28 +1,15 @@
 include(GNUInstallDirs)
 
-include_directories(
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/toolkit
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/asf
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/mpeg
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/ogg
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/ogg/vorbis
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/ogg/flac
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/flac
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/mpc
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/mp4
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/mpeg/id3v2
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/mpeg/id3v2/frames
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/wavpack
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/ogg/speex
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/trueaudio
-)
-
 set(tag_c_HDRS tag_c.h)
 
 add_library(tag_c tag_c.cpp ${tag_c_HDRS})
 
 target_link_libraries(tag_c tag)
+target_include_directories(tag_c
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/taglib>
+)
 set_target_properties(tag_c PROPERTIES PUBLIC_HEADER "${tag_c_HDRS}")
 if(BUILD_FRAMEWORK)
   set_target_properties(tag_c PROPERTIES FRAMEWORK TRUE)

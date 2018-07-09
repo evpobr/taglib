@@ -119,7 +119,6 @@ if(NOT HAVE_ZLIB AND ZLIB_SOURCE)
   set(HAVE_ZLIB_SOURCE 1)
 endif()
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
 configure_file(config.h.cmake "${CMAKE_CURRENT_BINARY_DIR}/config.h")
 
 option(TRACE_IN_RELEASE "Output debug messages even in release mode"  OFF)
