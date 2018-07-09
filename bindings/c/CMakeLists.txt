@@ -1,3 +1,5 @@
+include(GNUInstallDirs)
+
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib
   ${CMAKE_CURRENT_SOURCE_DIR}/../../taglib/toolkit
@@ -51,7 +53,6 @@ set_target_properties(tag_c PROPERTIES
   VERSION 0.0.0
   SOVERSION 0
   DEFINE_SYMBOL MAKE_TAGLIB_C_LIB
-  INSTALL_NAME_DIR ${LIB_INSTALL_DIR}
 )
 install(TARGETS tag_c
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

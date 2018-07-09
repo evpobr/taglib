@@ -1,4 +1,7 @@
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+include(GNUInstallDirs)
+
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/toolkit
   ${CMAKE_CURRENT_SOURCE_DIR}/asf
