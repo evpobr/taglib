@@ -43,14 +43,10 @@ SET(test_runner_SRCS
   test_matroska.cpp
 )
 ADD_EXECUTABLE(test_runner ${test_runner_SRCS})
-target_include_directories(test_runner
-  PRIVATE
-    ${CPPUNIT_INCLUDE_DIR}
-)
 target_link_libraries(test_runner
   PRIVATE
     tag
-	${CPPUNIT_LIBRARIES}
+	CppUnit::CppUnit
 )
 
 ADD_TEST(test_runner test_runner)
