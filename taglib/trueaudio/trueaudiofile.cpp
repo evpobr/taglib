@@ -91,7 +91,7 @@ bool TrueAudio::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-TrueAudio::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
+TrueAudio::File::File(FileName file, bool readProperties, ReadStyle) :
   TagLib::File(file),
   d(new FilePrivate())
 {
@@ -99,8 +99,8 @@ TrueAudio::File::File(FileName file, bool readProperties, AudioProperties::ReadS
     read(readProperties);
 }
 
-TrueAudio::File::File(FileName file, ID3v2::FrameFactory *frameFactory,
-                      bool readProperties, AudioProperties::ReadStyle) :
+TrueAudio::File::File(FileName file, ID3v2::FrameFactory *frameFactory, bool readProperties,
+                      ReadStyle) :
   TagLib::File(file),
   d(new FilePrivate(frameFactory))
 {
@@ -108,7 +108,7 @@ TrueAudio::File::File(FileName file, ID3v2::FrameFactory *frameFactory,
     read(readProperties);
 }
 
-TrueAudio::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle) :
+TrueAudio::File::File(IOStream *stream, bool readProperties, ReadStyle) :
   TagLib::File(stream),
   d(new FilePrivate())
 {
@@ -116,8 +116,8 @@ TrueAudio::File::File(IOStream *stream, bool readProperties, AudioProperties::Re
     read(readProperties);
 }
 
-TrueAudio::File::File(IOStream *stream, ID3v2::FrameFactory *frameFactory,
-                      bool readProperties, AudioProperties::ReadStyle) :
+TrueAudio::File::File(IOStream *stream, ID3v2::FrameFactory *frameFactory, bool readProperties,
+                      ReadStyle) :
   TagLib::File(stream),
   d(new FilePrivate(frameFactory))
 {

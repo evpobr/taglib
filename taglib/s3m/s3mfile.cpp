@@ -38,7 +38,7 @@ using namespace S3M;
 class S3M::File::FilePrivate
 {
 public:
-  explicit FilePrivate(AudioProperties::ReadStyle propertiesStyle)
+  explicit FilePrivate(ReadStyle propertiesStyle)
     : properties(propertiesStyle)
   {
   }
@@ -47,8 +47,7 @@ public:
   S3M::AudioProperties properties;
 };
 
-S3M::File::File(FileName file, bool readProperties,
-                AudioProperties::ReadStyle propertiesStyle) :
+S3M::File::File(FileName file, bool readProperties, ReadStyle propertiesStyle) :
   Mod::FileBase(file),
   d(new FilePrivate(propertiesStyle))
 {
@@ -56,8 +55,7 @@ S3M::File::File(FileName file, bool readProperties,
     read(readProperties);
 }
 
-S3M::File::File(IOStream *stream, bool readProperties,
-                AudioProperties::ReadStyle propertiesStyle) :
+S3M::File::File(IOStream *stream, bool readProperties, ReadStyle propertiesStyle) :
   Mod::FileBase(stream),
   d(new FilePrivate(propertiesStyle))
 {

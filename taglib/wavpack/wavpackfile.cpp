@@ -87,7 +87,7 @@ bool WavPack::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-WavPack::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
+WavPack::File::File(FileName file, bool readProperties, ReadStyle) :
   TagLib::File(file),
   d(new FilePrivate())
 {
@@ -95,7 +95,7 @@ WavPack::File::File(FileName file, bool readProperties, AudioProperties::ReadSty
     read(readProperties);
 }
 
-WavPack::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle) :
+WavPack::File::File(IOStream *stream, bool readProperties, ReadStyle) :
   TagLib::File(stream),
   d(new FilePrivate())
 {

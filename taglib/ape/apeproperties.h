@@ -53,7 +53,7 @@ namespace TagLib {
        * Create an instance of APE::Properties with the data read from the
        * APE::File \a file.
        */
-      AudioProperties(File *file, long long streamLength, ReadStyle style = Average);
+      AudioProperties(File *file, long long streamLength, ReadStyle style = ReadStyle::Average);
 
       /*!
        * Destroys this APE::AudioProperties instance.

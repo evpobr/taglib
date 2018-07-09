@@ -76,7 +76,7 @@ bool Ogg::Vorbis::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-Ogg::Vorbis::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
+Ogg::Vorbis::File::File(FileName file, bool readProperties, ReadStyle) :
   Ogg::File(file),
   d(new FilePrivate())
 {
@@ -84,7 +84,7 @@ Ogg::Vorbis::File::File(FileName file, bool readProperties, AudioProperties::Rea
     read(readProperties);
 }
 
-Ogg::Vorbis::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle) :
+Ogg::Vorbis::File::File(IOStream *stream, bool readProperties, ReadStyle) :
   Ogg::File(stream),
   d(new FilePrivate())
 {

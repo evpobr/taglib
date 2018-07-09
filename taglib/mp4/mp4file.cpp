@@ -87,7 +87,7 @@ bool MP4::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-MP4::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
+MP4::File::File(FileName file, bool readProperties, ReadStyle) :
   TagLib::File(file),
   d(new FilePrivate())
 {
@@ -95,7 +95,7 @@ MP4::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) 
     read(readProperties);
 }
 
-MP4::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle) :
+MP4::File::File(IOStream *stream, bool readProperties, ReadStyle) :
   TagLib::File(stream),
   d(new FilePrivate())
 {

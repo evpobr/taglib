@@ -50,7 +50,7 @@ namespace TagLib {
          * Create an instance of AIFF::AudioProperties with the data read from
          * the AIFF::File \a file.
          */
-        AudioProperties(File *file, ReadStyle style = Average);
+        AudioProperties(File *file, ReadStyle style = ReadStyle::Average);
 
         /*!
          * Destroys this AIFF::AudioProperties instance.

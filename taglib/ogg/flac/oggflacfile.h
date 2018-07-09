@@ -70,7 +70,7 @@ namespace TagLib {
        * \note In the current implementation, \a propertiesStyle is ignored.
        */
       File(FileName file, bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Constructs an Ogg/FLAC file from \a stream.  If \a readProperties is true
@@ -82,7 +82,7 @@ namespace TagLib {
        * \note In the current implementation, \a propertiesStyle is ignored.
        */
       File(IOStream *stream, bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Destroys this instance of the File.
@@ -141,7 +141,7 @@ namespace TagLib {
       File(const File &);
       File &operator=(const File &);
 
-      void read(bool readProperties, AudioProperties::ReadStyle propertiesStyle);
+      void read(bool readProperties, ReadStyle propertiesStyle);
       void scan();
       ByteVector streamInfoData();
       ByteVector xiphCommentData();

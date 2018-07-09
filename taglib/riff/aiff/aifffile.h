@@ -64,7 +64,7 @@ namespace TagLib {
          * \note In the current implementation, \a propertiesStyle is ignored.
          */
         File(FileName file, bool readProperties = true,
-             AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+             ReadStyle propertiesStyle = ReadStyle::Average);
 
         /*!
          * Constructs an AIFF file from \a stream.  If \a readProperties is true the
@@ -76,7 +76,7 @@ namespace TagLib {
          * \note In the current implementation, \a propertiesStyle is ignored.
          */
         File(IOStream *stream, bool readProperties = true,
-             AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+             ReadStyle propertiesStyle = ReadStyle::Average);
 
         /*!
          * Destroys this instance of the File.

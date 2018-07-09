@@ -85,7 +85,7 @@ bool MPC::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-MPC::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
+MPC::File::File(FileName file, bool readProperties, ReadStyle) :
   TagLib::File(file),
   d(new FilePrivate())
 {
@@ -93,7 +93,7 @@ MPC::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) 
     read(readProperties);
 }
 
-MPC::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle) :
+MPC::File::File(IOStream *stream, bool readProperties, ReadStyle) :
   TagLib::File(stream),
   d(new FilePrivate())
 {

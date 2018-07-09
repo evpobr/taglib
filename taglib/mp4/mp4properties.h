@@ -46,7 +46,7 @@ namespace TagLib {
         ALAC
       };
 
-      AudioProperties(File *file, Atoms *atoms, ReadStyle style = Average);
+      AudioProperties(File *file, Atoms *atoms, ReadStyle style = ReadStyle::Average);
       virtual ~AudioProperties();
 
       /*!

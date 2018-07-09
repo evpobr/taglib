@@ -54,7 +54,7 @@ namespace TagLib {
       /*!
        * Creates an instance of WavPack::AudioProperties.
        */
-      AudioProperties(File *file, long long streamLength, ReadStyle style = Average);
+      AudioProperties(File *file, long long streamLength, ReadStyle style = ReadStyle::Average);
 
       /*!
        * Destroys this WavPack::AudioProperties instance.

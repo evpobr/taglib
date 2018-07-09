@@ -360,7 +360,7 @@ namespace
 class XM::File::FilePrivate
 {
 public:
-  explicit FilePrivate(AudioProperties::ReadStyle propertiesStyle)
+  explicit FilePrivate(ReadStyle propertiesStyle)
     : tag(), properties(propertiesStyle)
   {
   }
@@ -369,19 +369,17 @@ public:
   XM::AudioProperties properties;
 };
 
-XM::File::File(FileName file, bool readProperties,
-               AudioProperties::ReadStyle propertiesStyle) :
-  Mod::FileBase(file),
-  d(new FilePrivate(propertiesStyle))
+XM::File::File(FileName file, bool readProperties, ReadStyle propertiesStyle)
+  : Mod::FileBase(file)
+  , d(new FilePrivate(propertiesStyle))
 {
   if(isOpen())
     read(readProperties);
 }
 
-XM::File::File(IOStream *stream, bool readProperties,
-               AudioProperties::ReadStyle propertiesStyle) :
-  Mod::FileBase(stream),
-  d(new FilePrivate(propertiesStyle))
+XM::File::File(IOStream *stream, bool readProperties, ReadStyle propertiesStyle)
+  : Mod::FileBase(stream)
+  , d(new FilePrivate(propertiesStyle))
 {
   if(isOpen())
     read(readProperties);

@@ -36,7 +36,7 @@ using namespace IT;
 class IT::File::FilePrivate
 {
 public:
-  explicit FilePrivate(AudioProperties::ReadStyle propertiesStyle)
+  explicit FilePrivate(ReadStyle propertiesStyle)
     : tag(), properties(propertiesStyle)
   {
   }
@@ -45,8 +45,7 @@ public:
   IT::AudioProperties properties;
 };
 
-IT::File::File(FileName file, bool readProperties,
-               AudioProperties::ReadStyle propertiesStyle) :
+IT::File::File(FileName file, bool readProperties, ReadStyle propertiesStyle) :
   Mod::FileBase(file),
   d(new FilePrivate(propertiesStyle))
 {
@@ -54,8 +53,7 @@ IT::File::File(FileName file, bool readProperties,
     read(readProperties);
 }
 
-IT::File::File(IOStream *stream, bool readProperties,
-               AudioProperties::ReadStyle propertiesStyle) :
+IT::File::File(IOStream *stream, bool readProperties, ReadStyle propertiesStyle) :
   Mod::FileBase(stream),
   d(new FilePrivate(propertiesStyle))
 {

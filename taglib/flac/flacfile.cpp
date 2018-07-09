@@ -120,7 +120,7 @@ bool FLAC::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-FLAC::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle,
+FLAC::File::File(FileName file, bool readProperties, ReadStyle,
                  ID3v2::FrameFactory *frameFactory) :
   TagLib::File(file),
   d(new FilePrivate(frameFactory))
@@ -129,7 +129,7 @@ FLAC::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle,
     read(readProperties);
 }
 
-FLAC::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle,
+FLAC::File::File(IOStream *stream, bool readProperties, ReadStyle,
                  ID3v2::FrameFactory *frameFactory) :
   TagLib::File(stream),
   d(new FilePrivate(frameFactory))

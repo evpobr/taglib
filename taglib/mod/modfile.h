@@ -48,8 +48,7 @@ namespace TagLib {
        * read.
        */
       File(FileName file, bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle =
-           AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Constructs a Protracker file from \a stream.
@@ -62,8 +61,7 @@ namespace TagLib {
        * responsible for deleting it after the File object.
        */
       File(IOStream *stream, bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle =
-           AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Destroys this instance of the File.

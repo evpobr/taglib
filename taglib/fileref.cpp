@@ -64,7 +64,7 @@ namespace
   // Detect the file type by user-defined resolvers.
 
   File *detectByResolvers(FileName fileName, bool readAudioProperties,
-                          AudioProperties::ReadStyle audioPropertiesStyle)
+                          ReadStyle audioPropertiesStyle)
   {
     ResolverList::ConstIterator it = fileTypeResolvers.begin();
     for(; it != fileTypeResolvers.end(); ++it) {
@@ -78,8 +78,8 @@ namespace
 
   // Detect the file type based on the file extension.
 
-  File* detectByExtension(IOStream *stream, bool readAudioProperties,
-                          AudioProperties::ReadStyle audioPropertiesStyle)
+  File *detectByExtension(IOStream *stream, bool readAudioProperties,
+                          ReadStyle audioPropertiesStyle)
   {
 #ifdef _WIN32
     const String s(stream->name().wstr());
@@ -142,8 +142,7 @@ namespace
 
   // Detect the file type based on the actual content of the stream.
 
-  File *detectByContent(IOStream *stream, bool readAudioProperties,
-                        AudioProperties::ReadStyle audioPropertiesStyle)
+  File *detectByContent(IOStream *stream, bool readAudioProperties, ReadStyle audioPropertiesStyle)
   {
     File *file = 0;
 
@@ -222,15 +221,14 @@ FileRef::FileRef() :
 {
 }
 
-FileRef::FileRef(FileName fileName, bool readAudioProperties,
-                 AudioProperties::ReadStyle audioPropertiesStyle) :
-  d(new FileRefPrivate())
+FileRef::FileRef(FileName fileName, bool readAudioProperties, ReadStyle audioPropertiesStyle)
+  : d(new FileRefPrivate())
 {
   parse(fileName, readAudioProperties, audioPropertiesStyle);
 }
 
-FileRef::FileRef(IOStream* stream, bool readAudioProperties, AudioProperties::ReadStyle audioPropertiesStyle) :
-  d(new FileRefPrivate())
+FileRef::FileRef(IOStream *stream, bool readAudioProperties, ReadStyle audioPropertiesStyle)
+  : d(new FileRefPrivate())
 {
   parse(stream, readAudioProperties, audioPropertiesStyle);
 }
@@ -393,8 +391,7 @@ bool FileRef::operator!=(const FileRef &ref) const
 // private members
 ////////////////////////////////////////////////////////////////////////////////
 
-void FileRef::parse(FileName fileName, bool readAudioProperties,
-                    AudioProperties::ReadStyle audioPropertiesStyle)
+void FileRef::parse(FileName fileName, bool readAudioProperties, ReadStyle audioPropertiesStyle)
 {
   // Try user-defined resolvers.
 
@@ -421,8 +418,7 @@ void FileRef::parse(FileName fileName, bool readAudioProperties,
   d->data->stream = 0;
 }
 
-void FileRef::parse(IOStream *stream, bool readAudioProperties,
-                    AudioProperties::ReadStyle audioPropertiesStyle)
+void FileRef::parse(IOStream *stream, bool readAudioProperties, ReadStyle audioPropertiesStyle)
 {
   // User-defined resolvers won't work with a stream.
 

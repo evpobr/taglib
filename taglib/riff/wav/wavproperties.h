@@ -53,7 +53,7 @@ namespace TagLib {
          * Create an instance of WAV::Properties with the data read from the
          * WAV::File \a file.
          */
-        AudioProperties(File *file, ReadStyle style = Average);
+        AudioProperties(File *file, ReadStyle style = ReadStyle::Average);
 
         /*!
          * Destroys this WAV::Properties instance.

@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
     copyright            : (C) 2002 - 2008 by Scott Wheeler
     email                : wheeler@kde.org
  ***************************************************************************/
@@ -129,7 +129,7 @@ bool MPEG::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-MPEG::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
+MPEG::File::File(FileName file, bool readProperties, ReadStyle) :
   TagLib::File(file),
   d(new FilePrivate())
 {
@@ -138,7 +138,7 @@ MPEG::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle)
 }
 
 MPEG::File::File(FileName file, ID3v2::FrameFactory *frameFactory,
-                 bool readProperties, AudioProperties::ReadStyle) :
+                 bool readProperties, ReadStyle) :
   TagLib::File(file),
   d(new FilePrivate(frameFactory))
 {
@@ -147,7 +147,7 @@ MPEG::File::File(FileName file, ID3v2::FrameFactory *frameFactory,
 }
 
 MPEG::File::File(IOStream *stream, ID3v2::FrameFactory *frameFactory,
-                 bool readProperties, AudioProperties::ReadStyle) :
+                 bool readProperties, ReadStyle) :
   TagLib::File(stream),
   d(new FilePrivate(frameFactory))
 {

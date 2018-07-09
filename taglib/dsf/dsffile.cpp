@@ -54,19 +54,17 @@ public:
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-DSF::File::File(FileName file, bool readProperties,
-                AudioProperties::ReadStyle propertiesStyle) :
-  TagLib::File(file),
-  d(new FilePrivate())
+DSF::File::File(FileName file, bool readProperties, ReadStyle propertiesStyle)
+  : TagLib::File(file)
+  , d(new FilePrivate())
 {
   if(isOpen())
     read(readProperties, propertiesStyle);
 }
 
-DSF::File::File(IOStream *stream, bool readProperties,
-                AudioProperties::ReadStyle propertiesStyle) :
-  TagLib::File(stream),
-  d(new FilePrivate())
+DSF::File::File(IOStream *stream, bool readProperties, ReadStyle propertiesStyle)
+  : TagLib::File(stream)
+  , d(new FilePrivate())
 {
   if(isOpen())
     read(readProperties, propertiesStyle);
@@ -149,7 +147,7 @@ bool DSF::File::save()
 // private members
 ////////////////////////////////////////////////////////////////////////////////
 
-void DSF::File::read(bool readProperties, AudioProperties::ReadStyle propertiesStyle)
+void DSF::File::read(bool readProperties, ReadStyle propertiesStyle)
 {
   // A DSF file consists of four chunks: DSD chunk, format chunk, data chunk, and metadata chunk
   // The file format is not chunked in the sense of a RIFF File, though

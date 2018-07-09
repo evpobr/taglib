@@ -92,10 +92,8 @@ namespace TagLib {
        *
        * \note In the current implementation, \a propertiesStyle is ignored.
        */
-      File(FileName file,
-           bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average,
-           ID3v2::FrameFactory *frameFactory = 0);
+      File(FileName file, bool readProperties = true,
+           ReadStyle propertiesStyle = ReadStyle::Average, ID3v2::FrameFactory *frameFactory = 0);
 
       /*!
        * Constructs a FLAC file from \a file.  If \a readProperties is true the
@@ -109,10 +107,8 @@ namespace TagLib {
        * \note TagLib will *not* take ownership of the stream, the caller is
        * responsible for deleting it after the File object.
        */
-      File(IOStream *stream,
-           bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average,
-           ID3v2::FrameFactory *frameFactory = 0);
+      File(IOStream *stream, bool readProperties = true,
+           ReadStyle propertiesStyle = ReadStyle::Average, ID3v2::FrameFactory *frameFactory = 0);
 
       /*!
        * Destroys this instance of the File.

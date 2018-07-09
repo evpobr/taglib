@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
     copyright            : (C) 2004-2005 by Allan Sandfeld Jensen
     email                : kde@carewolf.org
  ***************************************************************************/
@@ -84,7 +84,7 @@ bool Ogg::FLAC::File::isSupported(IOStream *stream)
 ////////////////////////////////////////////////////////////////////////////////
 
 Ogg::FLAC::File::File(FileName file, bool readProperties,
-                      AudioProperties::ReadStyle propertiesStyle) :
+                      ReadStyle propertiesStyle) :
   Ogg::File(file),
   d(new FilePrivate())
 {
@@ -93,7 +93,7 @@ Ogg::FLAC::File::File(FileName file, bool readProperties,
 }
 
 Ogg::FLAC::File::File(IOStream *stream, bool readProperties,
-                      AudioProperties::ReadStyle propertiesStyle) :
+                      ReadStyle propertiesStyle) :
   Ogg::File(stream),
   d(new FilePrivate())
 {
@@ -151,7 +151,7 @@ bool Ogg::FLAC::File::hasXiphComment() const
 // private members
 ////////////////////////////////////////////////////////////////////////////////
 
-void Ogg::FLAC::File::read(bool readProperties, AudioProperties::ReadStyle propertiesStyle)
+void Ogg::FLAC::File::read(bool readProperties, ReadStyle propertiesStyle)
 {
   // Sanity: Check if we really have an Ogg/FLAC file
 

@@ -92,7 +92,7 @@ bool APE::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-APE::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
+APE::File::File(FileName file, bool readProperties, ReadStyle) :
   TagLib::File(file),
   d(new FilePrivate())
 {
@@ -100,7 +100,7 @@ APE::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) 
     read(readProperties);
 }
 
-APE::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle) :
+APE::File::File(IOStream *stream, bool readProperties, ReadStyle) :
   TagLib::File(stream),
   d(new FilePrivate())
 {

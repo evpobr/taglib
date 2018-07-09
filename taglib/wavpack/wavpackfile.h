@@ -85,7 +85,7 @@ namespace TagLib {
        * false, \a propertiesStyle is ignored
        */
       File(FileName file, bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Constructs an WavPack file from \a file.  If \a readProperties is true the
@@ -96,7 +96,7 @@ namespace TagLib {
        * responsible for deleting it after the File object.
        */
       File(IOStream *stream, bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Destroys this instance of the File.

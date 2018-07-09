@@ -49,7 +49,7 @@ namespace TagLib {
        * Creates an instance of FLAC::AudioProperties with the data read from
        * the ByteVector \a data.
        */
-      AudioProperties(const ByteVector &data, long long streamLength, ReadStyle style = Average);
+      AudioProperties(const ByteVector &data, long long streamLength, ReadStyle style = ReadStyle::Average);
 
       /*!
        * Destroys this FLAC::AudioProperties instance.

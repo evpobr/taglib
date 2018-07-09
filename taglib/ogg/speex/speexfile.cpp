@@ -71,7 +71,7 @@ bool Ogg::Speex::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-Speex::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
+Speex::File::File(FileName file, bool readProperties, ReadStyle) :
   Ogg::File(file),
   d(new FilePrivate())
 {
@@ -79,7 +79,7 @@ Speex::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle
     read(readProperties);
 }
 
-Speex::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle) :
+Speex::File::File(IOStream *stream, bool readProperties, ReadStyle) :
   Ogg::File(stream),
   d(new FilePrivate())
 {

@@ -36,7 +36,7 @@ using namespace Mod;
 class Mod::File::FilePrivate
 {
 public:
-  explicit FilePrivate(AudioProperties::ReadStyle propertiesStyle)
+  explicit FilePrivate(ReadStyle propertiesStyle)
     : properties(propertiesStyle)
   {
   }
@@ -45,8 +45,7 @@ public:
   Mod::AudioProperties properties;
 };
 
-Mod::File::File(FileName file, bool readProperties,
-                AudioProperties::ReadStyle propertiesStyle) :
+Mod::File::File(FileName file, bool readProperties, ReadStyle propertiesStyle) :
   Mod::FileBase(file),
   d(new FilePrivate(propertiesStyle))
 {
@@ -54,8 +53,7 @@ Mod::File::File(FileName file, bool readProperties,
     read(readProperties);
 }
 
-Mod::File::File(IOStream *stream, bool readProperties,
-                AudioProperties::ReadStyle propertiesStyle) :
+Mod::File::File(IOStream *stream, bool readProperties, ReadStyle propertiesStyle) :
   Mod::FileBase(stream),
   d(new FilePrivate(propertiesStyle))
 {

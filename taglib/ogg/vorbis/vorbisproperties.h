@@ -51,7 +51,7 @@ namespace TagLib {
        * Creates an instance of Vorbis::Properties with the data read from the
        * Vorbis::File \a file.
        */
-      AudioProperties(File *file, ReadStyle style = Average);
+      AudioProperties(File *file, ReadStyle style = ReadStyle::Average);
 
       /*!
        * Destroys this VorbisProperties instance.

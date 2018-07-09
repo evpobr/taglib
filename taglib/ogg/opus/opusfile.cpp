@@ -71,17 +71,17 @@ bool Ogg::Opus::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-Opus::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
-  Ogg::File(file),
-  d(new FilePrivate())
+Opus::File::File(FileName file, bool readProperties, ReadStyle)
+  : Ogg::File(file)
+  , d(new FilePrivate())
 {
   if(isOpen())
     read(readProperties);
 }
 
-Opus::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle) :
-  Ogg::File(stream),
-  d(new FilePrivate())
+Opus::File::File(IOStream *stream, bool readProperties, ReadStyle)
+  : Ogg::File(stream)
+  , d(new FilePrivate())
 {
   if(isOpen())
     read(readProperties);

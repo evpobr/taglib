@@ -52,7 +52,7 @@ namespace
   class DummyResolver : public FileRef::FileTypeResolver
   {
   public:
-    virtual File *createFile(FileName fileName, bool, AudioProperties::ReadStyle) const
+    virtual File *createFile(FileName fileName, bool, ReadStyle) const
     {
       return new Ogg::Vorbis::File(fileName);
     }

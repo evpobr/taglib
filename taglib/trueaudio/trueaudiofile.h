@@ -85,7 +85,7 @@ namespace TagLib {
        * \note In the current implementation, \a propertiesStyle is ignored.
        */
       File(FileName file, bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Constructs a TrueAudio file from \a file.  If \a readProperties is true
@@ -96,9 +96,8 @@ namespace TagLib {
        *
        * \note In the current implementation, \a propertiesStyle is ignored.
        */
-      File(FileName file, ID3v2::FrameFactory *frameFactory,
-           bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+      File(FileName file, ID3v2::FrameFactory *frameFactory, bool readProperties = true,
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Constructs a TrueAudio file from \a stream.  If \a readProperties is true
@@ -110,7 +109,7 @@ namespace TagLib {
        * \note In the current implementation, \a propertiesStyle is ignored.
        */
       File(IOStream *stream, bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Constructs a TrueAudio file from \a stream.  If \a readProperties is true
@@ -124,9 +123,8 @@ namespace TagLib {
        *
        * \note In the current implementation, \a propertiesStyle is ignored.
        */
-      File(IOStream *stream, ID3v2::FrameFactory *frameFactory,
-           bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+      File(IOStream *stream, ID3v2::FrameFactory *frameFactory, bool readProperties = true,
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Destroys this instance of the File.

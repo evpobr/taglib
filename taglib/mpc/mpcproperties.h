@@ -49,7 +49,7 @@ namespace TagLib {
        * Creates an instance of MPC::AudioProperties with the data read directly
        * from a MPC::File.
        */
-      AudioProperties(File *file, long long streamLength, ReadStyle style = Average);
+      AudioProperties(File *file, long long streamLength, ReadStyle style = ReadStyle::Average);
 
       /*!
        * Destroys this MPC::Properties instance.

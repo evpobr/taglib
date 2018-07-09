@@ -63,7 +63,7 @@ bool RIFF::AIFF::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-RIFF::AIFF::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
+RIFF::AIFF::File::File(FileName file, bool readProperties, ReadStyle) :
   RIFF::File(file, BigEndian),
   d(new FilePrivate())
 {
@@ -71,7 +71,7 @@ RIFF::AIFF::File::File(FileName file, bool readProperties, AudioProperties::Read
     read(readProperties);
 }
 
-RIFF::AIFF::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle) :
+RIFF::AIFF::File::File(IOStream *stream, bool readProperties, ReadStyle) :
   RIFF::File(stream, BigEndian),
   d(new FilePrivate())
 {

@@ -103,10 +103,8 @@ namespace TagLib {
        * deleted.  Deletion will happen automatically when the FileRef passes
        * out of scope.
        */
-      virtual File *createFile(FileName fileName,
-                               bool readAudioProperties = true,
-                               AudioProperties::ReadStyle
-                               audioPropertiesStyle = AudioProperties::Average) const = 0;
+      virtual File *createFile(FileName fileName, bool readAudioProperties = true,
+                               ReadStyle audioPropertiesStyle = ReadStyle::Average) const = 0;
     };
 
     /*!
@@ -123,10 +121,8 @@ namespace TagLib {
      * Also see the note in the class documentation about why you may not want to
      * use this method in your application.
      */
-    explicit FileRef(FileName fileName,
-                     bool readAudioProperties = true,
-                     AudioProperties::ReadStyle
-                     audioPropertiesStyle = AudioProperties::Average);
+    explicit FileRef(FileName fileName, bool readAudioProperties = true,
+                     ReadStyle audioPropertiesStyle = ReadStyle::Average);
 
     /*!
      * Construct a FileRef from an opened \a IOStream.  If \a readAudioProperties
@@ -140,10 +136,8 @@ namespace TagLib {
      * \note TagLib will *not* take ownership of the stream, the caller is
      * responsible for deleting it after the File object.
      */
-    explicit FileRef(IOStream* stream,
-                     bool readAudioProperties = true,
-                     AudioProperties::ReadStyle
-                     audioPropertiesStyle = AudioProperties::Average);
+    explicit FileRef(IOStream *stream, bool readAudioProperties = true,
+                     ReadStyle audioPropertiesStyle = ReadStyle::Average);
 
     /*!
      * Construct a FileRef using \a file.  The FileRef now takes ownership of the
@@ -305,8 +299,8 @@ namespace TagLib {
     bool operator!=(const FileRef &ref) const;
 
   private:
-    void parse(FileName fileName, bool readAudioProperties, AudioProperties::ReadStyle audioPropertiesStyle);
-    void parse(IOStream *stream, bool readAudioProperties, AudioProperties::ReadStyle audioPropertiesStyle);
+    void parse(FileName fileName, bool readAudioProperties, ReadStyle audioPropertiesStyle);
+    void parse(IOStream *stream, bool readAudioProperties, ReadStyle audioPropertiesStyle);
 
     class FileRefPrivate;
     FileRefPrivate *d;

@@ -55,7 +55,7 @@ namespace TagLib {
        * \note In the current implementation, \a propertiesStyle is ignored.
        */
       File(FileName file, bool readProperties = true,
-           AudioProperties::ReadStyle audioPropertiesStyle = AudioProperties::Average);
+           ReadStyle audioPropertiesStyle = ReadStyle::Average);
 
       /*!
        * Constructs an MP4 file from \a file.  If \a readProperties is true the
@@ -67,7 +67,7 @@ namespace TagLib {
        * responsible for deleting it after the File object.
        */
       File(IOStream *stream, bool readProperties = true,
-           AudioProperties::ReadStyle audioPropertiesStyle = AudioProperties::Average);
+           ReadStyle audioPropertiesStyle = ReadStyle::Average);
 
       /*!
        * Destroys this instance of the File.

@@ -72,7 +72,7 @@ bool RIFF::WAV::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-RIFF::WAV::File::File(FileName file, bool readProperties, AudioProperties::ReadStyle) :
+RIFF::WAV::File::File(FileName file, bool readProperties, ReadStyle) :
   RIFF::File(file, LittleEndian),
   d(new FilePrivate())
 {
@@ -80,7 +80,7 @@ RIFF::WAV::File::File(FileName file, bool readProperties, AudioProperties::ReadS
     read(readProperties);
 }
 
-RIFF::WAV::File::File(IOStream *stream, bool readProperties, AudioProperties::ReadStyle) :
+RIFF::WAV::File::File(IOStream *stream, bool readProperties, ReadStyle) :
   RIFF::File(stream, LittleEndian),
   d(new FilePrivate())
 {

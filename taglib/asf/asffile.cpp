@@ -474,7 +474,7 @@ bool ASF::File::isSupported(IOStream *stream)
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-ASF::File::File(FileName file, bool, AudioProperties::ReadStyle) :
+ASF::File::File(FileName file, bool, ReadStyle) :
   TagLib::File(file),
   d(new FilePrivate())
 {
@@ -482,7 +482,7 @@ ASF::File::File(FileName file, bool, AudioProperties::ReadStyle) :
     read();
 }
 
-ASF::File::File(IOStream *stream, bool, AudioProperties::ReadStyle) :
+ASF::File::File(IOStream *stream, bool, ReadStyle) :
   TagLib::File(stream),
   d(new FilePrivate())
 {

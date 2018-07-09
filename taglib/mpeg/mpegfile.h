@@ -80,7 +80,7 @@ namespace TagLib {
        * in a future version.
        */
       File(FileName file, bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Constructs an MPEG file from \a file.  If \a readProperties is true the
@@ -94,7 +94,7 @@ namespace TagLib {
       // BIC: merge with the above constructor
       File(FileName file, ID3v2::FrameFactory *frameFactory,
            bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Constructs an MPEG file from \a stream.  If \a readProperties is true the
@@ -110,7 +110,7 @@ namespace TagLib {
        */
       File(IOStream *stream, ID3v2::FrameFactory *frameFactory,
            bool readProperties = true,
-           AudioProperties::ReadStyle propertiesStyle = AudioProperties::Average);
+           ReadStyle propertiesStyle = ReadStyle::Average);
 
       /*!
        * Destroys this instance of the File.

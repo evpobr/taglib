@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
     copyright           : (C) 2011 by Mathias Panzenböck
     email               : grosser.meister.morti@gmx.net
  ***************************************************************************/
@@ -56,9 +56,9 @@ public:
   unsigned short bpmSpeed;
 };
 
-XM::AudioProperties::AudioProperties(AudioProperties::ReadStyle) :
-  TagLib::AudioProperties(),
-  d(new PropertiesPrivate())
+XM::AudioProperties::AudioProperties(ReadStyle)
+  : TagLib::AudioProperties()
+  , d(new PropertiesPrivate())
 {
 }
 
