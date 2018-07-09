@@ -134,16 +134,16 @@ bool ByteVectorStream::isOpen() const
   return true;
 }
 
-void ByteVectorStream::seek(long long offset, Position p)
+void ByteVectorStream::seek(long long offset, SeekOrigin p)
 {
   switch(p) {
-  case Beginning:
+  case SeekOrigin::Beginning:
     d->position = offset;
     break;
-  case Current:
+  case SeekOrigin::Current:
     d->position += offset;
     break;
-  case End:
+  case SeekOrigin::End:
     d->position = length() + offset; // offset is expected to be negative
     break;
   }

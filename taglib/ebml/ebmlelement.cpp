@@ -187,7 +187,7 @@ public:
       size = static_cast<long long>(ssize);
     }
     else {
-      document->seek(0, File::End);
+      document->seek(0, SeekOrigin::End);
       size = document->tell();
     }
   }

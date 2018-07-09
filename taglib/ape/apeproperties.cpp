@@ -170,7 +170,7 @@ void APE::AudioProperties::read(File *file, long long streamLength)
 void APE::AudioProperties::analyzeCurrent(File *file)
 {
   // Read the descriptor
-  file->seek(2, File::Current);
+  file->seek(2, SeekOrigin::Current);
   const ByteVector descriptor = file->readBlock(44);
   if(descriptor.size() < 44) {
     debug("APE::AudioProperties::analyzeCurrent() -- descriptor is too short.");
@@ -180,7 +180,7 @@ void APE::AudioProperties::analyzeCurrent(File *file)
   const unsigned int descriptorBytes = descriptor.toUInt32LE(0);
 
   if((descriptorBytes - 52) > 0)
-    file->seek(descriptorBytes - 52, File::Current);
+    file->seek(descriptorBytes - 52, SeekOrigin::Current);
 
   // Read the header
   const ByteVector header = file->readBlock(24);
@@ -234,7 +234,7 @@ void APE::AudioProperties::analyzeOld(File *file)
   d->sampleFrames = (totalFrames - 1) * blocksPerFrame + finalFrameBlocks;
 
   // Get the bit depth from the RIFF-fmt chunk.
-  file->seek(16, File::Current);
+  file->seek(16, SeekOrigin::Current);
   const ByteVector fmt = file->readBlock(28);
   if(fmt.size() < 28 || !fmt.startsWith("WAVEfmt ")) {
     debug("APE::AudioProperties::analyzeOld() -- fmt header is too short.");

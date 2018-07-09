@@ -47,7 +47,7 @@ MP4::Atom::Atom(File *file)
     // trailing garbage or the file is truncated
     debug("MP4: Couldn't read 8 bytes of data for atom header");
     length = 0;
-    file->seek(0, File::End);
+    file->seek(0, SeekOrigin::End);
     return;
   }
 
@@ -65,7 +65,7 @@ MP4::Atom::Atom(File *file)
   if(length < 8) {
     debug("MP4: Invalid atom size");
     length = 0;
-    file->seek(0, File::End);
+    file->seek(0, SeekOrigin::End);
     return;
   }
 
@@ -74,10 +74,10 @@ MP4::Atom::Atom(File *file)
   for(int i = 0; i < numContainers; i++) {
     if(name == containers[i]) {
       if(name == "meta") {
-        file->seek(4, File::Current);
+        file->seek(4, SeekOrigin::Current);
       }
       else if(name == "stsd") {
-        file->seek(8, File::Current);
+        file->seek(8, SeekOrigin::Current);
       }
       while(file->tell() < offset + length) {
         MP4::Atom *child = new MP4::Atom(file);
@@ -144,7 +144,7 @@ MP4::Atoms::Atoms(File *file)
 {
   atoms.setAutoDelete(true);
 
-  file->seek(0, File::End);
+  file->seek(0, SeekOrigin::End);
   long long end = file->tell();
   file->seek(0);
   while(file->tell() + 8 <= end) {

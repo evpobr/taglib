@@ -119,10 +119,10 @@ public:
     ByteVectorStream stream(v);
     CPPUNIT_ASSERT_EQUAL(26LL, stream.length());
 
-    stream.seek(-4, IOStream::End);
+    stream.seek(-4, SeekOrigin::End);
     CPPUNIT_ASSERT_EQUAL(ByteVector("w"), stream.readBlock(1));
 
-    stream.seek(-25, IOStream::End);
+    stream.seek(-25, SeekOrigin::End);
     CPPUNIT_ASSERT_EQUAL(ByteVector("b"), stream.readBlock(1));
   }
 

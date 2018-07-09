@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
     copyright            : (C) 2002 - 2008 by Scott Wheeler
     email                : wheeler@kde.org
  ***************************************************************************/
@@ -282,9 +282,9 @@ bool File::isValid() const
   return isOpen() && d->valid;
 }
 
-void File::seek(long long offset, Position p)
+void File::seek(long long offset, SeekOrigin p)
 {
-  d->stream->seek(offset, IOStream::Position(p));
+  d->stream->seek(offset, p);
 }
 
 void File::truncate(long long length)

@@ -30,6 +30,18 @@
 
 namespace TagLib {
 
+  /*!
+   * Position in the stream used for seeking.
+   */
+  enum class SeekOrigin {
+    //! Seek from the beginning of the stream.
+    Beginning,
+    //! Seek from the current position in the stream.
+    Current,
+    //! Seek from the end of the stream.
+    End
+  };
+
 #ifdef _WIN32
 
   class String;
@@ -138,7 +150,7 @@ namespace TagLib {
      *
      * \see Position
      */
-    virtual void seek(long long offset, Position p = Beginning) = 0;
+    virtual void seek(long long offset, SeekOrigin p = SeekOrigin::Beginning) = 0;
 
     /*!
      * Reset the end-of-stream and error flags on the stream.

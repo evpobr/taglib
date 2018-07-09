@@ -38,7 +38,7 @@ long long Utils::findID3v1(File *file)
   if(!file->isValid())
     return -1;
 
-  file->seek(-128, File::End);
+  file->seek(-128, SeekOrigin::End);
   const long long p = file->tell();
 
   if(file->readBlock(3) == ID3v1::Tag::fileIdentifier())
@@ -66,9 +66,9 @@ long long Utils::findAPE(File *file, long long id3v1Location)
     return -1;
 
   if(id3v1Location >= 0)
-    file->seek(id3v1Location - 32, File::Beginning);
+    file->seek(id3v1Location - 32, SeekOrigin::Beginning);
   else
-    file->seek(-32, File::End);
+    file->seek(-32, SeekOrigin::End);
 
   const long long p = file->tell();
 

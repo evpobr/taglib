@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
     copyright            : (C) 2002 - 2008 by Scott Wheeler
     email                : wheeler@kde.org
  ***************************************************************************/
@@ -48,17 +48,6 @@ namespace TagLib {
   class TAGLIB_EXPORT File
   {
   public:
-    /*!
-     * Position in the file used for seeking.
-     */
-    enum Position {
-      //! Seek from the beginning of the file.
-      Beginning,
-      //! Seek from the current position in the file.
-      Current,
-      //! Seek from the end of the file.
-      End
-    };
 
     /*!
      * Destroys this File instance.
@@ -218,7 +207,7 @@ namespace TagLib {
      *
      * \see Position
      */
-    void seek(long long offset, Position p = Beginning);
+    void seek(long long offset, SeekOrigin p = SeekOrigin::Beginning);
 
     /*!
      * Reset the end-of-file and error flags on the file.

@@ -113,7 +113,7 @@ namespace TagLib {
      *
      * \see Position
      */
-    void seek(long long offset, Position p = Beginning);
+    void seek(long long offset, SeekOrigin p = SeekOrigin::Beginning);
 
     /*!
      * Reset the end-of-file and error flags on the file.

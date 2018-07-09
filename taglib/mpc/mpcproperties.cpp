@@ -290,7 +290,7 @@ void MPC::AudioProperties::readSV8(File *file, long long streamLength)
     }
 
     else {
-      file->seek(dataSize, File::Current);
+      file->seek(dataSize, SeekOrigin::Current);
     }
   }
 }

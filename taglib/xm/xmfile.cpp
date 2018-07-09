@@ -96,7 +96,7 @@ namespace
     unsigned int read(TagLib::File &file, unsigned int limit)
     {
       unsigned int count = std::min(m_size, limit);
-      file.seek(count, TagLib::File::Current);
+      file.seek(count, SeekOrigin::Current);
       return count;
     }
 
@@ -565,7 +565,7 @@ void XM::File::read(bool)
     unsigned int count = pattern.read(*this, patternHeaderLength - 4U);
     READ_ASSERT(count == std::min(patternHeaderLength - 4U, pattern.size()));
 
-    seek(patternHeaderLength - (4 + count) + dataSize, Current);
+    seek(patternHeaderLength - (4 + count) + dataSize, SeekOrigin::Current);
   }
 
   StringList intrumentNames;
@@ -595,7 +595,7 @@ void XM::File::read(bool)
       // wouldn't know which header size to assume otherwise:
       READ_ASSERT(instrumentHeaderSize >= count + 4 && readU32L(sampleHeaderSize));
       // skip unhandeled header proportion:
-      seek(instrumentHeaderSize - count - 4, Current);
+      seek(instrumentHeaderSize - count - 4, SeekOrigin::Current);
 
       for(unsigned short j = 0; j < sampleCount; ++ j) {
         unsigned int  sampleLength = 0;
@@ -623,7 +623,7 @@ void XM::File::read(bool)
         unsigned int count = sample.read(*this, sampleHeaderSize);
         READ_ASSERT(count == std::min(sampleHeaderSize, sample.size()));
         // skip unhandeled header proportion:
-        seek(sampleHeaderSize - count, Current);
+        seek(sampleHeaderSize - count, SeekOrigin::Current);
 
         offset += sampleLength;
         sampleNames.append(sampleName);
@@ -633,7 +633,7 @@ void XM::File::read(bool)
       offset = instrumentHeaderSize - count;
     }
     intrumentNames.append(instrumentName);
-    seek(offset, Current);
+    seek(offset, SeekOrigin::Current);
   }
 
   d->properties.setSampleCount(sumSampleCount);

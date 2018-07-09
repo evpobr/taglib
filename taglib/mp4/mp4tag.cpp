@@ -527,7 +527,7 @@ MP4::Tag::updateParents(const AtomList &path, long delta, int ignore)
     long size = d->file->readBlock(4).toUInt32BE(0);
     // 64-bit
     if (size == 1) {
-      d->file->seek(4, File::Current); // Skip name
+      d->file->seek(4, SeekOrigin::Current); // Skip name
       long long longSize = d->file->readBlock(8).toInt64BE(0);
       // Seek the offset of the 64-bit size
       d->file->seek((*it)->offset + 8);

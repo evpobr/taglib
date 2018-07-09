@@ -360,7 +360,7 @@ ByteVector ASF::File::FilePrivate::HeaderExtensionObject::guid() const
 
 void ASF::File::FilePrivate::HeaderExtensionObject::parse(ASF::File *file, unsigned int /*size*/)
 {
-  file->seek(18, File::Current);
+  file->seek(18, SeekOrigin::Current);
   long long dataSize = readDWORD(file);
   long long dataPos = 0;
   while(dataPos < dataSize) {
@@ -618,7 +618,7 @@ void ASF::File::read()
     setValid(false);
     return;
   }
-  seek(2, Current);
+  seek(2, SeekOrigin::Current);
 
   SHARED_PTR<FilePrivate::FilePropertiesObject>   filePropertiesObject;
   SHARED_PTR<FilePrivate::StreamPropertiesObject> streamPropertiesObject;

@@ -61,7 +61,7 @@ public:
       Ogg::FLAC::File f(newname.c_str());
       CPPUNIT_ASSERT_EQUAL(String("The Artist"), f.tag()->artist());
 
-      f.seek(0, File::End);
+      f.seek(0, SeekOrigin::End);
       CPPUNIT_ASSERT_EQUAL(9134LL, f.tell());
     }
   }

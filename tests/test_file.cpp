@@ -115,18 +115,18 @@ public:
     CPPUNIT_ASSERT_EQUAL(0LL, f.tell());
     CPPUNIT_ASSERT_EQUAL(4328LL, f.length());
 
-    f.seek(100, File::Beginning);
+    f.seek(100, SeekOrigin::Beginning);
     CPPUNIT_ASSERT_EQUAL(100LL, f.tell());
-    f.seek(100, File::Current);
+    f.seek(100, SeekOrigin::Current);
     CPPUNIT_ASSERT_EQUAL(200LL, f.tell());
-    f.seek(-300, File::Current);
+    f.seek(-300, SeekOrigin::Current);
     CPPUNIT_ASSERT_EQUAL(200LL, f.tell());
 
-    f.seek(-100, File::End);
+    f.seek(-100, SeekOrigin::End);
     CPPUNIT_ASSERT_EQUAL(4228LL, f.tell());
-    f.seek(-100, File::Current);
+    f.seek(-100, SeekOrigin::Current);
     CPPUNIT_ASSERT_EQUAL(4128LL, f.tell());
-    f.seek(300, File::Current);
+    f.seek(300, SeekOrigin::Current);
     CPPUNIT_ASSERT_EQUAL(4428LL, f.tell());
   }
 

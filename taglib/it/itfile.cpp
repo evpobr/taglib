@@ -87,7 +87,7 @@ bool IT::File::save()
   writeString(d->tag.title(), 25);
   writeByte(0);
 
-  seek(2, Current);
+  seek(2, SeekOrigin::Current);
 
   unsigned short length = 0;
   unsigned short instrumentCount = 0;
@@ -96,7 +96,7 @@ bool IT::File::save()
   if(!readU16L(length) || !readU16L(instrumentCount) || !readU16L(sampleCount))
     return false;
 
-  seek(15, Current);
+  seek(15, SeekOrigin::Current);
 
   // write comment as instrument and sample names:
   StringList lines = d->tag.comment().split("\n");
@@ -196,7 +196,7 @@ void IT::File::read(bool)
   READ_ASSERT(readBlock(4) == "IMPM");
   READ_STRING(d->tag.setTitle, 26);
 
-  seek(2, Current);
+  seek(2, SeekOrigin::Current);
 
   READ_U16L_AS(length);
   READ_U16L_AS(instrumentCount);
@@ -277,7 +277,7 @@ void IT::File::read(bool)
 
     READ_STRING_AS(dosFileName, 13);
 
-    seek(15, Current);
+    seek(15, SeekOrigin::Current);
 
     READ_STRING_AS(instrumentName, 26);
     comment.append(instrumentName);

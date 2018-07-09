@@ -99,7 +99,7 @@ bool S3M::File::save()
   if(!readU16L(length) || !readU16L(sampleCount))
     return false;
 
-  seek(28, Current);
+  seek(28, SeekOrigin::Current);
 
   int channels = 0;
   for(int i = 0; i < 32; ++ i) {
@@ -112,7 +112,7 @@ bool S3M::File::save()
     if(setting != 0xff) ++ channels;
   }
 
-  seek(channels, Current);
+  seek(channels, SeekOrigin::Current);
 
   StringList lines = d->tag.comment().split("\n");
   // write comment as sample names:
@@ -173,7 +173,7 @@ void S3M::File::read(bool)
   // Hm, but there is "UltraClick-removal" and some other
   // variables in ScreamTracker IIIs GUI.
 
-  seek(12, Current);
+  seek(12, SeekOrigin::Current);
 
   int channels = 0;
   for(int i = 0; i < 32; ++ i) {
@@ -194,7 +194,7 @@ void S3M::File::read(bool)
   }
   d->properties.setLengthInPatterns(realLength);
 
-  seek(channels, Current);
+  seek(channels, SeekOrigin::Current);
 
   // Note: The S3M spec mentions samples and instruments, but in
   //       the header there are only pointers to instruments.
@@ -215,13 +215,13 @@ void S3M::File::read(bool)
     READ_U32L_AS(repeatStop);
     READ_BYTE_AS(sampleVolume);
 
-    seek(1, Current);
+    seek(1, SeekOrigin::Current);
 
     READ_BYTE_AS(packing);
     READ_BYTE_AS(sampleFlags);
     READ_U32L_AS(baseFrequency);
 
-    seek(12, Current);
+    seek(12, SeekOrigin::Current);
 
     READ_STRING_AS(sampleName, 28);
     // The next 4 bytes should be "SCRS", but I've found

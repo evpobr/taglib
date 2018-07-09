@@ -340,7 +340,7 @@ bool FileStream::isOpen() const
   return (d->file != InvalidFileHandle);
 }
 
-void FileStream::seek(long long offset, Position p)
+void FileStream::seek(long long offset, SeekOrigin p)
 {
   if(!isOpen()) {
     debug("FileStream::seek() -- invalid file.");
@@ -349,7 +349,7 @@ void FileStream::seek(long long offset, Position p)
 
 #ifdef _WIN32
 
-  if(p != Beginning && p != Current && p != End) {
+  if(p != SeekOrigin::Beginning && p != SeekOrigin::Current && p != SeekOrigin::End) {
     debug("FileStream::seek() -- Invalid Position value.");
     return;
   }
@@ -365,13 +365,13 @@ void FileStream::seek(long long offset, Position p)
 
   int whence;
   switch(p) {
-  case Beginning:
+  case SeekOrigin::Beginning:
     whence = SEEK_SET;
     break;
-  case Current:
+  case SeekOrigin::Current:
     whence = SEEK_CUR;
     break;
-  case End:
+  case SeekOrigin::End:
     whence = SEEK_END;
     break;
   default:

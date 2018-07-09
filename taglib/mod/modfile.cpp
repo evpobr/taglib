@@ -88,12 +88,12 @@ bool Mod::File::save()
   size_t n = std::min<size_t>(lines.size(), d->properties.instrumentCount());
   for(size_t i = 0; i < n; ++ i) {
     writeString(lines[i], 22);
-    seek(8, Current);
+    seek(8, SeekOrigin::Current);
   }
 
   for(size_t i = n; i < d->properties.instrumentCount(); ++ i) {
     writeString(String(), 22);
-    seek(8, Current);
+    seek(8, SeekOrigin::Current);
   }
   return true;
 }

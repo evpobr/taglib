@@ -249,7 +249,7 @@ bool MPEG::File::save(int tags, bool stripOthers, int id3v2Version, bool duplica
         seek(d->ID3v1Location);
       }
       else {
-        seek(0, End);
+        seek(0, SeekOrigin::End);
         d->ID3v1Location = tell();
       }
 

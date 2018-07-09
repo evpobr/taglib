@@ -148,7 +148,7 @@ bool APE::File::save()
       seek(d->ID3v1Location);
     }
     else {
-      seek(0, End);
+      seek(0, SeekOrigin::End);
       d->ID3v1Location = tell();
     }
 
