@@ -1,10 +1,6 @@
-cmake_minimum_required(VERSION 2.8.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 
-project(taglib)
-
-if(NOT ${CMAKE_VERSION} VERSION_LESS 2.8.12)
-  cmake_policy(SET CMP0022 OLD)
-endif()
+project(TagLib)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
@@ -20,9 +16,6 @@ if(APPLE)
     #set(CMAKE_MACOSX_RPATH 1)
     set(FRAMEWORK_INSTALL_DIR "/Library/Frameworks" CACHE STRING "Directory to install frameworks to.")
   endif()
-endif()
-if(NOT BUILD_SHARED_LIBS)
-  add_definitions(-DTAGLIB_STATIC)
 endif()
 option(ENABLE_STATIC_RUNTIME "Visual Studio, link with runtime statically" OFF)
 
@@ -47,15 +40,30 @@ if(PLATFORM_WINRT)
   add_definitions(-DPLATFORM_WINRT)
 endif()
 
+option(ENABLE_CMAKE_PACKAGE_CONFIG "Enable CMake package config module" ON)
+
 add_definitions(-DHAVE_CONFIG_H)
 set(TESTS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests/")
 
 ## the following are directories where stuff will be installed to
-set(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)")
-set(EXEC_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}" CACHE PATH "Base directory for executables and libraries")
-set(BIN_INSTALL_DIR "${EXEC_INSTALL_PREFIX}/bin" CACHE PATH "The subdirectory to the binaries prefix (default prefix/bin)")
-set(LIB_INSTALL_DIR "${EXEC_INSTALL_PREFIX}/lib${LIB_SUFFIX}" CACHE PATH "The subdirectory relative to the install prefix where libraries will be installed (default is /lib${LIB_SUFFIX})")
-set(INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "The subdirectory to the header prefix")
+
+include(GNUInstallDirs)
+
+if(DEFINED LIB_SUFFIX)
+  message(FATAL_ERROR "LIB_SUFFIX option is no longer available, use CMAKE_INSTALL_LIBDIR instead")
+endif()
+if(DEFINED EXEC_INSTALL_PREFIX)
+  message(FATAL_ERROR "EXEC_INSTALL_PREFIX option is no longer available, use CMAKE_INSTALL_PREFIX instead")
+endif()
+if(DEFINED BIN_INSTALL_DIR)
+  message(FATAL_ERROR "BIN_INSTALL_DIR option is no longer available, use CMAKE_INSTALL_BINDIR instead")
+endif()
+if(DEFINED LIB_INSTALL_DIR)
+  message(FATAL_ERROR "LIB_INSTALL_DIR option is no longer available, use CMAKE_INSTALL_LIBDIR instead")
+endif()
+if(DEFINED INCLUDE_INSTALL_DIR)
+  message(FATAL_ERROR "INCLUDE_INSTALL_DIR option is no longer available, use CMAKE_INSTALL_INCLUDEDIR instead")
+endif()
 
 if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
@@ -106,20 +114,28 @@ include(ConfigureChecks.cmake)
 
 if(NOT WIN32)
   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/taglib-config.cmake" "${CMAKE_CURRENT_BINARY_DIR}/taglib-config")
-  install(PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/taglib-config" DESTINATION "${BIN_INSTALL_DIR}")
+  install(PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/taglib-config" DESTINATION "${CMAKE_INSTALL_BINDIR}")
 endif()
 
 if(WIN32)
   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/taglib-config.cmd.cmake" "${CMAKE_CURRENT_BINARY_DIR}/taglib-config.cmd")
-  install(PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/taglib-config.cmd" DESTINATION "${BIN_INSTALL_DIR}")
+  install(PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/taglib-config.cmd" DESTINATION "${CMAKE_INSTALL_BINDIR}")
 endif()
 
 if(NOT BUILD_FRAMEWORK)
   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/taglib.pc.cmake" "${CMAKE_CURRENT_BINARY_DIR}/taglib.pc" @ONLY)
-  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/taglib.pc" DESTINATION "${LIB_INSTALL_DIR}/pkgconfig")
+  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/taglib.pc" DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
 endif()
 
-if(NOT HAVE_ZLIB AND ZLIB_SOURCE)
+if(HAVE_ZLIB)
+  if(CMAKE_VERSION VERSION_LESS 3.1)
+    add_library(ZLIB::ZLIB UNKNOWN IMPORTED)
+    set_target_properties(ZLIB::ZLIB PROPERTIES
+      INTERFACE_INCLUDE_DIRECTORIES "${ZLIB_INCLUDE_DIRS}"
+      IMPORTED_LOCATION "${ZLIB_LIBRARY}"
+    )
+  endif()
+elseif(ZLIB_SOURCE)
   set(HAVE_ZLIB 1)
   set(HAVE_ZLIB_SOURCE 1)
 endif()
